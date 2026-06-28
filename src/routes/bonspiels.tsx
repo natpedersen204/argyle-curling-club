@@ -29,7 +29,7 @@ const bonspiels = [
     typicalDates: 'First weekend in February',
     format: 'A long-standing community event that has become a one-day Saturday bonspiel in recent years.',
     included: 'A fun, social day of curling with an emphasis on community and fellowship.',
-    contact: 'Natalia Pedersen',
+    contact: 'Pam Crockatt',
     registration: 'Registration information is shared through the club as the event approaches. Contact the club for updates.',
     photo: 'LADIES-BONSPIEL-01.jpg',
   },

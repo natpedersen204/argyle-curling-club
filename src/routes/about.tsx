@@ -28,7 +28,7 @@ const boardMembers = [
   { position: 'Men’s League Rep', name: 'Robert Nolting', phone: 'Phone TBD', email: 'Email TBD' },
   { position: 'Ladies League Rep', name: 'Virginia Crockatt', phone: 'Phone TBD', email: 'Email TBD' },
   { position: 'Men’s Bonspiel Rep', name: 'Trevor Buchanan', phone: 'Phone TBD', email: 'Email TBD' },
-  { position: 'Ladies Bonspiel Rep', name: 'Natalia Pedersen', phone: 'Phone TBD', email: 'Email TBD' },
+  { position: 'Ladies Bonspiel Rep', name: 'Pam Crockatt', phone: 'Phone TBD', email: 'Email TBD' },
   { position: 'Mixed Glow Bonspiel Rep', name: 'Riley Buchanan', phone: 'Phone TBD', email: 'Email TBD' },
   { position: 'Colin Crockatt Classic Rep', name: 'Travis Lawrence & Kyle Grandmont', phone: 'Phone TBD', email: 'Email TBD' },
   { position: 'Seniors League Rep', name: 'Bruce Buchanan', phone: 'Phone TBD', email: 'Email TBD' },
