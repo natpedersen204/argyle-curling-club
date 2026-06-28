@@ -20,7 +20,7 @@ export function Section({
   id,
 }: SectionProps) {
   return (
-    <section id={id} className={`py-16 sm:py-20 ${className}`}>
+    <section id={id} className={`py-14 sm:py-16 lg:py-20 ${className}`}>
       <div className="container-page">
         <div className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}>
           {eyebrow && (
@@ -28,14 +28,14 @@ export function Section({
               {eyebrow}
             </p>
           )}
-          <h2 className="mt-2 text-balance text-3xl sm:text-4xl">{title}</h2>
+          <h2 className="mt-3 text-balance text-3xl sm:text-4xl">{title}</h2>
           {description && (
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               {description}
             </p>
           )}
         </div>
-        {children && <div className="mt-10">{children}</div>}
+        {children && <div className="mt-8 sm:mt-10">{children}</div>}
       </div>
     </section>
   );

@@ -19,16 +19,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#2B2B2B]/20 bg-[#2B2B2B] text-[#F8F5F0] shadow-soft backdrop-blur-md">
-      <div className="container-page grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:py-6">
+      <div className="container-page flex items-center justify-between gap-3 py-2 sm:py-2.5 lg:py-3">
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          className="flex min-w-0 items-center gap-3 sm:gap-4"
+          className="flex min-w-0 items-center gap-2 sm:gap-3"
         >
           <img
             src={argyleLogo}
             alt="Argyle Curling Club logo"
-            className="h-24 w-auto shrink-0 object-contain sm:h-28 lg:h-32"
+            className="h-16 w-auto shrink-0 object-contain sm:h-18 lg:h-20"
           />
         </Link>
 
@@ -63,7 +63,7 @@ export function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#F8F5F0]/25 text-[#F8F5F0] lg:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[#F8F5F0]/25 text-[#F8F5F0] lg:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>

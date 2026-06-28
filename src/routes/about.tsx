@@ -35,7 +35,7 @@ const boardMembers = [
 ]
 
 const facilityHighlights = [
-  'Four sheets of ice maintained by volunteer ice techs',
+  'Three sheets of ice maintained by volunteer ice techs',
   'A warm clubhouse and lounge for after-game visits and events',
   'A full kitchen and licensed bar service with advance notice',
   'Accessible entry and free parking on site',
@@ -105,7 +105,7 @@ export function AboutPage() {
               The first rink was built in 1939, with volunteer labour and community fundraising, and it quickly became a gathering place for local families and curlers.
             </p>
             <p>
-              Over time, the club grew into the modern facility that serves the community today, with four sheets of ice, a clubhouse, and a long tradition of welcoming both members and visitors.
+              Over time, the club grew into the modern facility that serves the community today, with three sheets of ice, a clubhouse, and a long tradition of welcoming both members and visitors.
             </p>
           </div>
           <div className="rounded-xl border border-border bg-card p-6 shadow-card">
