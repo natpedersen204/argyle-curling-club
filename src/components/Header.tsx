@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import argyleLogo from "../assets/logos/argyle-logo1.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -17,7 +18,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#5A1620]/20 bg-[#5A1620] text-[#F8F5F0] shadow-soft backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#2B2B2B]/20 bg-[#2B2B2B] text-[#F8F5F0] shadow-soft backdrop-blur-md">
       <div className="container-page grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:py-6">
         <Link
           to="/"
@@ -25,9 +26,9 @@ export function Header() {
           className="flex min-w-0 items-center gap-3 sm:gap-4"
         >
           <img
-            src="/src/assets/logos/argyle-logo1.png"
+            src={argyleLogo}
             alt="Argyle Curling Club logo"
-            className="h-16 w-auto shrink-0 object-contain sm:h-20 lg:h-24"
+            className="h-24 w-auto shrink-0 object-contain sm:h-28 lg:h-32"
           />
         </Link>
 
@@ -69,7 +70,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-[#F8F5F0]/15 bg-[#5A1620] lg:hidden">
+        <nav className="border-t border-[#F8F5F0]/15 bg-[#2B2B2B] lg:hidden">
           <ul className="container-page flex flex-col gap-1 py-3">
             {navLinks.map((l) => (
               <li key={l.to}>
