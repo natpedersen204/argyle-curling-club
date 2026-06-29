@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { Section } from '../components/Section'
 import { ArrowRight, BadgeCheck, Building2, CalendarDays, Camera, PhoneCall, Sparkles, UsersRound } from 'lucide-react'
-import heroPhoto from '../assets/images/IMG_9942.JPEG'
+import heroPhoto from '../assets/images/IMG_0030.JPEG'
 import leaguePhoto from '../assets/images/IMG_9944.JPEG'
 import bonspielPhoto from '../assets/images/IMG_9977.JPEG'
 import glowPhoto from '../assets/images/IMG_7132.JPEG'
