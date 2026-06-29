@@ -1,12 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { Section } from '../components/Section'
-import { ArrowRight, BadgeCheck, Building2, CalendarDays, Camera, PhoneCall, Sparkles, UsersRound } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Building2, CalendarDays, PhoneCall, Sparkles, UsersRound } from 'lucide-react'
 import heroPhoto from '../assets/images/IMG_0030.JPEG'
+import newsPhoto from '../assets/images/IMG_9456.JPEG'
 import leaguePhoto from '../assets/images/IMG_9944.JPEG'
 import bonspielPhoto from '../assets/images/IMG_9977.JPEG'
 import glowPhoto from '../assets/images/IMG_7132.JPEG'
-import lifePhoto from '../assets/images/FullSizeRender.jpeg'
-import newsPhoto from '../assets/images/IMG_9456.JPEG'
 import rentalsPhoto from '../assets/images/IMG_9908.jpeg'
 import contactPhoto from '../assets/images/IMG_9944.JPEG'
 
@@ -70,22 +69,7 @@ const upcomingBonspiels = [
   },
 ]
 
-const newsItems = [
-  {
-    title: 'Season updates and announcements',
-    summary: 'Visit the club news page for current information about draws, events, and volunteer updates.',
-  },
-  {
-    title: 'Community connection',
-    summary: 'The club remains a welcoming place for league play, social gatherings, and local fellowship.',
-  },
-]
 
-const socialLinks = [
-  { name: 'Facebook', handle: '@argylecurlingclub', url: '#' },
-  { name: 'Instagram', handle: '@argylecurlingclub', url: '#' },
-  { name: 'TikTok', handle: '@argylecurlingclub', url: '#' },
-]
 
 const sponsors = [
   { name: 'Sponsor Name TBD', blurb: 'Local support for club events and community activities.' },
@@ -219,47 +203,6 @@ export function HomePage() {
             <Link to="/rentals" className="mt-6 inline-flex items-center rounded-full bg-[#C8A24A] px-5 py-3 text-sm font-semibold text-[#5A1620] transition-colors hover:bg-[#D8B96A]">
               Contact us about rentals <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </div>
-        </div>
-      </Section>
-
-      <Section eyebrow="Club news" title="What’s happening at the club?" className="rounded-[2rem] border border-[#e7dac4] bg-[#f7efe0] px-4 py-14 shadow-[0_16px_45px_rgba(26,26,26,0.05)] sm:px-8 lg:px-10 lg:py-16">
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-4">
-            <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
-              <img
-                src={newsPhoto}
-                alt="Community life at the curling club"
-                className="h-60 w-full object-cover"
-              />
-            </div>
-            <h3 className="font-display text-2xl text-[#7A1F2B]">Club News & Announcements</h3>
-            {newsItems.map((item) => (
-              <div key={item.title} className="rounded-[1.25rem] border border-[#e7dac4] bg-white/80 p-6 shadow-sm">
-                <h4 className="font-display text-xl text-[#7A1F2B]">{item.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.summary}</p>
-              </div>
-            ))}
-          </div>
-          <div className="rounded-[1.5rem] border border-[#e7dac4] bg-white/80 p-6 shadow-sm">
-            <div className="flex items-center gap-2 text-[#7A1F2B]">
-              <Camera className="h-4 w-4" />
-              <h3 className="font-display text-2xl text-[#7A1F2B]">Life at Argyle Curling Club</h3>
-            </div>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Follow the club on social media for live updates and fresh photos from our leagues, events, and community nights.
-            </p>
-            <div className="mt-6 overflow-hidden rounded-[1.25rem] border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
-              <img src={lifePhoto} alt="Club members enjoying a glow curling event" className="h-72 w-full object-cover" />
-            </div>
-            <div className="mt-6 space-y-3">
-              {socialLinks.map((link) => (
-                <a key={link.name} href={link.url} className="flex items-center justify-between rounded-[1rem] border border-[#e7dac4] px-4 py-3 text-sm text-[#7A1F2B] hover:bg-[#F8F5F0]">
-                  <span>{link.name}</span>
-                  <span className="text-muted-foreground">{link.handle}</span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </Section>
