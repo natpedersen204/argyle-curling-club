@@ -20,7 +20,7 @@ const values = [
   {
     icon: Snowflake,
     title: 'Love of the Game',
-    description: 'Curling brings people together for sport, laughter, and fellowship long after the final end.',
+    description: 'Curling brings people together for sport, laughter, and good times long after the final end.',
   },
 ]
 
@@ -104,7 +104,7 @@ export function AboutPage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
-              The Argyle Curling Club began as a local effort to create a place for winter recreation, fellowship, and community connection.
+              The Argyle Curling Club began as a local effort to create a place for winter recreation, socializing, and community connection.
             </p>
             <p>
               The first rink was built in 1939, with volunteer labour and community fundraising, and it quickly became a gathering place for local families and curlers.

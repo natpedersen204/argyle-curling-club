@@ -79,7 +79,7 @@ export function HomePage() {
               Welcome to the Argyle Curling Club
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
-              Located in Argyle, Manitoba, the club has long been a centre for sport, recreation, and community fellowship. Whether you are joining a league, attending a bonspiel, or looking for a welcoming place to gather, there is a place for you here.
+              Located in Argyle, Manitoba, the club has long been a centre for sport, recreation, and community connection. Whether you are joining a league, attending a bonspiel, or looking for a welcoming place to gather, there is a place for you here.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
