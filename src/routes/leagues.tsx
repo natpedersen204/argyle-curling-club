@@ -40,7 +40,7 @@ const leagueTable = [
   {
     league: 'Youth League',
     day: 'Every Second Sunday',
-    time: '',
+    time: 'Afternoon',
     contact: 'Sarah Barton',
     phone: 'Phone TBD',
     fee: 'Fee TBD',
@@ -99,7 +99,6 @@ export function LeaguesPage() {
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Time</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Contact Person</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Phone</th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Fee</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -110,7 +109,6 @@ export function LeaguesPage() {
                   <td className="px-4 py-3 text-charcoal">{league.time}</td>
                   <td className="px-4 py-3 text-charcoal">{league.contact}</td>
                   <td className="px-4 py-3 text-muted-foreground">{league.phone}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{league.fee}</td>
                 </tr>
               ))}
             </tbody>
