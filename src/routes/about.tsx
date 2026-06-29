@@ -88,8 +88,14 @@ export function AboutPage() {
               Open Google Maps <ArrowRight className="ml-1 h-3.5 w-3.5" />
             </a>
           </div>
-          <div className="overflow-hidden rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
-            <img src={mapPhoto} alt="Argyle Curling Club location map" className="h-72 w-full object-cover" />
+          <div className="overflow-hidden rounded-xl border border-dashed border-[#C8A24A] shadow-sm">
+            <iframe
+              title="Argyle Curling Club map"
+              src="https://maps.google.com/maps?q=Argyle,Manitoba,Canada&t=m&z=9&ie=UTF8&iwloc=&output=embed"
+              className="h-72 w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </Section>
