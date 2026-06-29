@@ -2,34 +2,62 @@ import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight } from 'lucide-react'
 
-const sponsors = [
-  'Mike Crockatt Transport',
-  'Stonewall Home Hardware',
-  'Enns Brothers',
-  'Prairie Roots Co-op',
-  'R&B Diesel',
-  'Terraco',
-  'Unger Seed Farms Ltd.',
-  'Quarry Physiotherapy',
-  'Nurtien Ag Solutions (Grosse Isle)',
-  'Steeltown Ford (Mitch Wicklund)',
-  'Tuff Contracting',
-  'Complete Physiotherapy',
-  "Leo's",
-  'Riddell Seed Co.',
-  'Big Block Auto',
-  'Trevor King MLA for Lakeside',
-  'Rona Rockwood Gimli',
-  'Warren Tire',
-  'Access Credit Union',
-  'Commercial Comfort',
-  'IDA Stonewall Pharmacy',
-  'Advance Exteriors',
-  'Slatcher Electric',
-  'Quarry Ridge Pharmacy',
-  'Richardson Pioneer',
-  'Roof Express',
+// Drop logo files into src/assets/sponsors/ and import them here.
+// SVG preferred, PNG as fallback. Example:
+//   import homeHardwareLogo from '../assets/sponsors/home-hardware.svg'
+//   Then set logo: homeHardwareLogo on the matching entry below.
+
+type Sponsor = {
+  name: string
+  logo?: string
+}
+
+const sponsors: Sponsor[] = [
+  { name: 'Mike Crockatt Transport' },
+  { name: 'Stonewall Home Hardware' },
+  { name: 'Enns Brothers' },
+  { name: 'Prairie Roots Co-op' },
+  { name: 'R&B Diesel' },
+  { name: 'Terraco' },
+  { name: 'Unger Seed Farms Ltd.' },
+  { name: 'Quarry Physiotherapy' },
+  { name: 'Nurtien Ag Solutions' },
+  { name: 'Steeltown Ford' },
+  { name: 'Tuff Contracting' },
+  { name: 'Complete Physiotherapy' },
+  { name: "Leo's" },
+  { name: 'Riddell Seed Co.' },
+  { name: 'Big Block Auto' },
+  { name: 'Trevor King MLA for Lakeside' },
+  { name: 'Rona Rockwood Gimli' },
+  { name: 'Warren Tire' },
+  { name: 'Access Credit Union' },
+  { name: 'Commercial Comfort' },
+  { name: 'IDA Stonewall Pharmacy' },
+  { name: 'Advance Exteriors' },
+  { name: 'Slatcher Electric' },
+  { name: 'Quarry Ridge Pharmacy' },
+  { name: 'Richardson Pioneer' },
+  { name: 'Roof Express' },
 ]
+
+function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
+  return (
+    <div className="group flex h-[100px] items-center justify-center rounded-xl border border-[#e7dac4] bg-white px-6 py-4 shadow-sm transition-all duration-300 hover:border-[#C8A24A]/60 hover:shadow-md">
+      {sponsor.logo ? (
+        <img
+          src={sponsor.logo}
+          alt={sponsor.name}
+          className="max-h-[64px] w-auto max-w-[160px] object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
+        />
+      ) : (
+        <span className="text-center text-sm font-semibold leading-snug text-[#7a6a58] transition-colors duration-300 group-hover:text-[#7A1F2B]">
+          {sponsor.name}
+        </span>
+      )}
+    </div>
+  )
+}
 
 export function SponsorsPage() {
   return (
@@ -41,15 +69,9 @@ export function SponsorsPage() {
       />
 
       <Section eyebrow="Community Support" title="Our Sponsors">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {sponsors.map((name) => (
-            <div
-              key={name}
-              className="flex items-center rounded-xl border border-[#e7dac4] bg-white/80 px-5 py-4 shadow-sm"
-            >
-              <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[#C8A24A]" />
-              <span className="text-sm font-medium text-[#3a2a1a]">{name}</span>
-            </div>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {sponsors.map((sponsor) => (
+            <SponsorCard key={sponsor.name} sponsor={sponsor} />
           ))}
         </div>
       </Section>
@@ -78,7 +100,7 @@ export function SponsorsPage() {
             <h4 className="font-display text-xl text-[#7A1F2B]">What Your Support Provides</h4>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {[
-                'Name listed on the club website',
+                'Name and logo listed on the club website',
                 'Recognition at bonspiels and club events',
                 'Signage opportunities at the rink',
                 'Logo placement on social media',
