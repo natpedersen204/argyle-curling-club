@@ -25,17 +25,17 @@ const values = [
 ]
 
 const boardMembers = [
-  { position: 'President', name: 'Chad Thoresby', phone: '204-461-0009' },
-  { position: 'Treasurer', name: 'Pam Crockatt', phone: '204-825-7353' },
-  { position: 'Bar Manager', name: 'Ryley Buchanan', phone: '204-461-3918' },
-  { position: 'Ice Techs', name: 'Riley Buchanan & Trevor Buchanan', phone: '204-461-4682 & 204-461-3525' },
-  { position: 'Men’s League Rep', name: 'Robert Nolting', phone: '204-781-0853' },
-  { position: 'Ladies League Rep', name: 'Virginia Crockatt', phone: '204-461-3653' },
-  { position: 'Men’s Bonspiel Rep', name: 'Trevor Buchanan', phone: '204-461-3525' },
-  { position: 'Ladies Bonspiel Rep', name: 'Pam Crockatt', phone: '204-825-7353' },
-  { position: 'Mixed Glow Bonspiel Rep', name: 'Riley Buchanan', phone: '204-461-4682' },
-  { position: 'Colin Crockatt Classic Rep', name: 'Travis Lawrence & Kyle Grandmont', phone: '204-291-5282 & 204-999-3001' },
-  { position: 'Seniors League Rep', name: 'Bruce Buchanan', phone: '204-461-0180' },
+  { position: 'President', name: 'Chad Thoresby' },
+  { position: 'Treasurer', name: 'Pam Crockatt' },
+  { position: 'Bar Manager', name: 'Ryley Buchanan' },
+  { position: 'Ice Techs', name: 'Riley Buchanan & Trevor Buchanan' },
+  { position: 'Men’s League Rep', name: 'Robert Nolting' },
+  { position: 'Ladies League Rep', name: 'Virginia Crockatt' },
+  { position: 'Men’s Bonspiel Rep', name: 'Trevor Buchanan' },
+  { position: 'Ladies Bonspiel Rep', name: 'Pam Crockatt' },
+  { position: 'Mixed Glow Bonspiel Rep', name: 'Riley Buchanan' },
+  { position: 'Colin Crockatt Classic Rep', name: 'Travis Lawrence & Kyle Grandmont' },
+  { position: 'Seniors League Rep', name: 'Bruce Buchanan' },
 ]
 
 const facilityHighlights = [
@@ -134,7 +134,6 @@ export function AboutPage() {
               <tr>
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Position</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Name</th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Phone</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -142,12 +141,12 @@ export function AboutPage() {
                 <tr key={member.position}>
                   <td className="px-4 py-3 font-medium text-charcoal">{member.position}</td>
                   <td className="px-4 py-3 text-charcoal">{member.name}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{member.phone}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        <p className="mt-4 text-sm text-muted-foreground">To reach a board member, visit the <a href="/contact" className="font-semibold text-burgundy hover:text-burgundy-dark">Contact page</a>.</p>
       </Section>
 
       <Section eyebrow="Our facility" title="What makes the club special">

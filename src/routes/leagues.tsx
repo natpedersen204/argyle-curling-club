@@ -7,36 +7,31 @@ const leagueTable = [
     league: 'Seniors League',
     day: 'Tuesday',
     time: 'Mornings',
-    contact: 'Lyle Appleyard',
-    phone: '204-467-5826',
+    contact: 'Lyle Appleyard'
   },
   {
     league: "Men's League",
     day: 'Wednesday',
     time: 'Nights',
-    contact: 'Robert Nolting',
-    phone: '204-781-0853',
+    contact: 'Robert Nolting'
   },
   {
     league: 'Open Drop In',
     day: 'Thursday',
     time: 'Mornings',
-    contact: 'Terry Billingham',
-    phone: '204-981-9006',
+    contact: 'Terry Billingham'
   },
   {
     league: 'Ladies League',
     day: 'Thursday',
     time: 'Nights',
-    contact: 'Virginia Crockatt',
-    phone: '204-461-3653',
+    contact: 'Virginia Crockatt'
   },
   {
     league: 'Youth League',
     day: 'Every Second Sunday',
     time: 'Afternoon',
-    contact: 'Sarah Barton',
-    phone: '204-997-6651',
+    contact: 'Sarah Barton'
   },
 ]
 
@@ -91,7 +86,6 @@ export function LeaguesPage() {
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Day</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Time</th>
                 <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Contact Person</th>
-                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground">Phone</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -101,12 +95,12 @@ export function LeaguesPage() {
                   <td className="px-4 py-3 text-charcoal">{league.day}</td>
                   <td className="px-4 py-3 text-charcoal">{league.time}</td>
                   <td className="px-4 py-3 text-charcoal">{league.contact}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{league.phone}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        <p className="mt-4 text-sm text-muted-foreground">To get in touch with a league contact, visit the <a href="/contact" className="font-semibold text-burgundy hover:text-burgundy-dark">Contact page</a>.</p>
       </Section>
 
       <Section eyebrow="League details" title="More about each league" className="bg-accent/20">
