@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import menPhoto from '../assets/images/IMG_0025.JPEG'
 import seniorsPhoto from '../assets/images/IMG_6270.JPEG'
 import ladiesPhoto from '../assets/images/IMG_2627.jpeg'
-import glowPhoto from '../assets/images/IMG_1364.jpeg'
+import glowPhoto from '../assets/images/IMG_3064.JPEG'
 import crockattPhoto from '../assets/images/IMG_3636.jpeg'
 
 const bonspiels = [

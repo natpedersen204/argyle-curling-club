@@ -6,7 +6,7 @@ import leaguePhoto from '../assets/images/IMG_9944.JPEG'
 import bonspielPhoto from '../assets/images/IMG_9977.JPEG'
 import glowPhoto from '../assets/images/IMG_2627.jpeg'
 import mensPhoto from '../assets/images/IMG_0025.JPEG'
-import mixedGlowPhoto from '../assets/images/IMG_1364.jpeg'
+import mixedGlowPhoto from '../assets/images/IMG_3064.JPEG'
 import rentalsPhoto from '../assets/images/IMG_9908.jpeg'
 import contactPhoto from '../assets/images/IMG_9944.JPEG'
 
