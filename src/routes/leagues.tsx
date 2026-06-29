@@ -1,8 +1,6 @@
 ﻿import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight } from 'lucide-react'
-import schedulePhoto1 from '../assets/images/IMG_9016.jpeg'
-import schedulePhoto2 from '../assets/images/IMG_9017.jpeg'
 
 const leagueTable = [
   {
@@ -124,16 +122,6 @@ export function LeaguesPage() {
               <Link to="/contact" className="mt-5 inline-flex items-center text-sm font-semibold text-burgundy hover:text-burgundy-dark">
                 Contact about this league <ArrowRight className="ml-1 h-3.5 w-3.5" />
               </Link>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section eyebrow="Schedules" title="League schedule images">
-        <div className="grid gap-6 md:grid-cols-2">
-          {[schedulePhoto1, schedulePhoto2].map((photo, index) => (
-            <div key={index} className="overflow-hidden rounded-xl border border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
-              <img src={photo} alt={`League schedule ${index + 1}`} className="h-60 w-full object-cover" />
             </div>
           ))}
         </div>
