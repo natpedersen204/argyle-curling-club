@@ -2,10 +2,11 @@ import { Link } from '@tanstack/react-router'
 import { Section } from '../components/Section'
 import { ArrowRight, BadgeCheck, PhoneCall, UsersRound } from 'lucide-react'
 import heroPhoto from '../assets/images/IMG_0030.JPEG'
-import newsPhoto from '../assets/images/IMG_9456.JPEG'
 import leaguePhoto from '../assets/images/IMG_9944.JPEG'
 import bonspielPhoto from '../assets/images/IMG_9977.JPEG'
 import glowPhoto from '../assets/images/IMG_7132.JPEG'
+import mensPhoto from '../assets/images/IMG_0025.JPEG'
+import mixedGlowPhoto from '../assets/images/IMG_2627.jpeg'
 import rentalsPhoto from '../assets/images/IMG_9908.jpeg'
 import contactPhoto from '../assets/images/IMG_9944.JPEG'
 
@@ -26,7 +27,7 @@ const upcomingBonspiels = [
     name: 'Men’s Bonspiel',
     details: 'Typically held the first weekend after New Year’s and often runs through the weekend.',
     link: '/bonspiels',
-    image: leaguePhoto,
+    image: mensPhoto,
   },
   {
     name: 'Seniors Daytime Bonspiel',
@@ -44,7 +45,7 @@ const upcomingBonspiels = [
     name: 'Mixed Glow Bonspiel',
     details: 'Usually held in the third weekend in February.',
     link: '/bonspiels',
-    image: newsPhoto,
+    image: mixedGlowPhoto,
   },
 ]
 

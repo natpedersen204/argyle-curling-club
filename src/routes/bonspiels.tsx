@@ -1,11 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight } from 'lucide-react'
-import menPhoto from '../assets/images/IMG_7132.JPEG'
+import menPhoto from '../assets/images/IMG_0025.JPEG'
 import seniorsPhoto from '../assets/images/IMG_7300.JPEG'
 import ladiesPhoto from '../assets/images/IMG_9456.JPEG'
-import glowPhoto from '../assets/images/IMG_9977.JPEG'
-import crockattPhoto from '../assets/images/IMG_9908.jpeg'
+import glowPhoto from '../assets/images/IMG_2627.jpeg'
+import crockattPhoto from '../assets/images/IMG_3636.jpeg'
 
 const bonspiels = [
   {
