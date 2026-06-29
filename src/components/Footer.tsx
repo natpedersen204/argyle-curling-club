@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone } from "lucide-react";
 import footerLogo from "../assets/logos/argyle-logo1.png";
 
 export function Footer() {
@@ -35,10 +35,7 @@ export function Footer() {
               <Phone className="h-4 w-4 shrink-0 text-gold" />
               <a href="tel:+12044610009" className="transition-colors hover:text-white">(204) 461-0009</a>
             </li>
-            <li className="flex gap-3">
-              <Mail className="h-4 w-4 shrink-0 text-gold" />
-              <a href="mailto:info@argylecurling.ca" className="transition-colors hover:text-white">info@argylecurling.ca</a>
-            </li>
+
           </ul>
         </div>
 

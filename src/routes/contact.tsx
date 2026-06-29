@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { PageHero, Section } from '../components/Section'
-import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react'
+import { MapPin, Phone, ArrowRight } from 'lucide-react'
 
 const schema = z.object({
   name: z.string().min(2, 'Please enter your name'),
@@ -198,15 +198,7 @@ export function ContactPage() {
                     </a>
                   </div>
                 </li>
-                <li className="flex gap-3 text-sm">
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <div>
-                    <p className="font-medium text-charcoal">Email</p>
-                    <a href="mailto:info@argylecurling.ca" className="text-muted-foreground hover:text-burgundy">
-                      info@argylecurling.ca
-                    </a>
-                  </div>
-                </li>
+
               </ul>
             </div>
 
