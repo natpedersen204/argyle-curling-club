@@ -2,20 +2,6 @@ import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
-const facilities = [
-  {
-    title: 'Main Lounge',
-    description: 'A bright, welcoming area for smaller gatherings, meetings, and casual celebrations.',
-  },
-  {
-    title: 'Clubhouse Gathering Room',
-    description: 'A flexible space suited to birthdays, family events, team socials, and community get-togethers.',
-  },
-  {
-    title: 'Ice-Side Hospitality Area',
-    description: 'A relaxed space for post-game visits, meal gatherings, and friendly community events.',
-  },
-]
 
 const amenities = [
   'Warm, welcoming indoor seating for groups of various sizes',
@@ -42,17 +28,6 @@ export function RentalsPage() {
         title="Club Rentals"
         description="The Argyle Curling Club offers a warm, welcoming setting for meetings, socials, birthdays, celebrations, and community gatherings."
       />
-
-      <Section eyebrow="Facility overview" title="Available rental spaces">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {facilities.map((facility) => (
-            <div key={facility.title} className="rounded-xl border border-border bg-card p-6 shadow-card">
-              <h3 className="font-display text-xl text-burgundy">{facility.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{facility.description}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       <Section eyebrow="Amenities" title="Features and amenities" className="bg-accent/20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
