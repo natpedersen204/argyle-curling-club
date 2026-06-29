@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { Section } from '../components/Section'
-import { ArrowRight, BadgeCheck, Building2, CalendarDays, PhoneCall, Sparkles, UsersRound } from 'lucide-react'
+import { ArrowRight, BadgeCheck, PhoneCall, UsersRound } from 'lucide-react'
 import heroPhoto from '../assets/images/IMG_0030.JPEG'
 import newsPhoto from '../assets/images/IMG_9456.JPEG'
 import leaguePhoto from '../assets/images/IMG_9944.JPEG'
@@ -18,27 +18,6 @@ const quickLinks = [
     to: '/leagues',
     image: leaguePhoto,
     icon: UsersRound,
-  },
-  {
-    title: 'What bonspiels are coming up?',
-    description: 'Our season includes several community bonspiels and special events.',
-    to: '/bonspiels',
-    image: bonspielPhoto,
-    icon: CalendarDays,
-  },
-  {
-    title: 'Can I rent the club?',
-    description: 'The clubhouse and event space are available for community gatherings and celebrations.',
-    to: '/rentals',
-    image: rentalsPhoto,
-    icon: Building2,
-  },
-  {
-    title: 'What’s happening at the club?',
-    description: 'Follow the latest updates, announcements, and community news here.',
-    to: '/news',
-    image: newsPhoto,
-    icon: Sparkles,
   },
 ]
 
