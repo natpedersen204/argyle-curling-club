@@ -51,7 +51,6 @@ export function Footer() {
               ["/bonspiels", "Bonspiels"],
               ["/rentals", "Club Rentals"],
               ["/sponsors", "Sponsors"],
-              ["/news", "News"],
               ["/contact", "Contact"],
             ].map(([to, label]) => (
               <li key={to}>

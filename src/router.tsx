@@ -6,7 +6,6 @@ import { LeaguesPage } from './routes/leagues'
 import { BonspielsPage } from './routes/bonspiels'
 import { RentalsPage } from './routes/rentals'
 import { SponsorsPage } from './routes/sponsors'
-import { NewsPage } from './routes/news'
 import { ContactPage } from './routes/contact'
 
 const rootRoute = createRootRoute({ component: Root })
@@ -17,7 +16,6 @@ const leaguesRoute = createRoute({ getParentRoute: () => rootRoute, path: '/leag
 const bonspielsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/bonspiels', component: BonspielsPage })
 const rentalsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/rentals', component: RentalsPage })
 const sponsorsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/sponsors', component: SponsorsPage })
-const newsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/news', component: NewsPage })
 const contactRoute = createRoute({ getParentRoute: () => rootRoute, path: '/contact', component: ContactPage })
 
 export const router = createRouter({
@@ -28,7 +26,6 @@ export const router = createRouter({
     bonspielsRoute,
     rentalsRoute,
     sponsorsRoute,
-    newsRoute,
     contactRoute,
   ]),
 })
