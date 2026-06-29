@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import footerLogo from "../assets/logos/argyle-logo2.png";
+import footerLogo from "../assets/logos/argyle-logo1.png";
 
 export function Footer() {
   return (
