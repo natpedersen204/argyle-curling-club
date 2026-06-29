@@ -130,15 +130,7 @@ export function HomePage() {
       </div>
 
       <Section eyebrow="Coming up" title="What bonspiels are coming up?" className="rounded-[2rem] border border-[#e7dac4] bg-[#f7efe0] px-4 py-14 shadow-[0_16px_45px_rgba(26,26,26,0.05)] sm:px-8 lg:px-10 lg:py-16">
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
-            <img
-              src={bonspielPhoto}
-              alt="Curling club event layout"
-              className="h-72 w-full object-cover"
-            />
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2">
             {upcomingBonspiels.map((spiel) => (
               <div key={spiel.name} className="rounded-[1.25rem] border border-[#e7dac4] bg-white/80 p-6 shadow-sm">
                 <img src={spiel.image} alt={spiel.name} className="h-32 w-full rounded-[1rem] object-cover" />
@@ -149,7 +141,6 @@ export function HomePage() {
                 </Link>
               </div>
             ))}
-          </div>
         </div>
       </Section>
 
