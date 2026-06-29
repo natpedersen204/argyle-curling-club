@@ -91,12 +91,7 @@ export function HomePage() {
               >
                 Explore Leagues <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#D8B96A] hover:text-[#D8B96A]"
-              >
-                Contact the Club
-              </Link>
+
             </div>
           </div>
         </div>
