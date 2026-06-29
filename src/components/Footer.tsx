@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import footerLogo from "../assets/logos/argyle-logo2.png";
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src="/src/assets/logos/argyle-logo2.png"
+              src={footerLogo}
               alt="Argyle Curling Club crest"
               className="h-14 w-auto shrink-0 object-contain"
             />
