@@ -1,6 +1,10 @@
 import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight, Heart, Snowflake, Users } from 'lucide-react'
+import mapPhoto from '../assets/images/image0000021.jpg'
+import historyPhoto from '../assets/images/IMG_7132.JPEG'
+import facilityPhoto from '../assets/images/IMG_4243.jpeg'
+import clubRoomPhoto from '../assets/images/IMG_9456.JPEG'
 
 const values = [
   {
@@ -41,12 +45,7 @@ const facilityHighlights = [
   'Accessible entry and free parking on site',
 ]
 
-const galleryPlaceholders = [
-  'HISTORY-01.jpg',
-  'HISTORY-02.jpg',
-  'FACILITY-01.jpg',
-  'CLUB-ROOM-01.jpg',
-]
+const galleryPhotos = [historyPhoto, facilityPhoto, clubRoomPhoto, mapPhoto]
 
 export function AboutPage() {
   return (
@@ -89,8 +88,8 @@ export function AboutPage() {
               Open Google Maps <ArrowRight className="ml-1 h-3.5 w-3.5" />
             </a>
           </div>
-          <div className="rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-8 text-center text-sm text-muted-foreground">
-            Map placeholder: ARGYLE-MAP-01.jpg
+          <div className="overflow-hidden rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
+            <img src={mapPhoto} alt="Argyle Curling Club location map" className="h-72 w-full object-cover" />
           </div>
         </div>
       </Section>
@@ -180,11 +179,11 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Gallery" title="Photo placeholders" className="bg-accent/20">
+      <Section eyebrow="Gallery" title="Club photos" className="bg-accent/20">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {galleryPlaceholders.map((placeholder) => (
-            <div key={placeholder} className="rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-6 text-center text-sm text-muted-foreground">
-              Photo placeholder: {placeholder}
+          {galleryPhotos.map((photo, index) => (
+            <div key={index} className="overflow-hidden rounded-xl border border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
+              <img src={photo} alt={`Gallery photo ${index + 1}`} className="h-56 w-full object-cover" />
             </div>
           ))}
         </div>

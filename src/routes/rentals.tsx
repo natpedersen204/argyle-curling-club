@@ -1,6 +1,9 @@
 import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import rentalPhoto1 from '../assets/images/IMG_7300.JPEG'
+import rentalPhoto2 from '../assets/images/IMG_9908.jpeg'
+import rentalPhoto3 from '../assets/images/IMG_9944.JPEG'
 
 const facilities = [
   {
@@ -95,11 +98,13 @@ export function RentalsPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Gallery" title="Photo placeholders">
+      <Section eyebrow="Gallery" title="Rental space photos">
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-8 text-center text-sm text-muted-foreground">Photo placeholder: CLUB-RENTALS-01.jpg</div>
-          <div className="rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-8 text-center text-sm text-muted-foreground">Photo placeholder: CLUB-RENTALS-02.jpg</div>
-          <div className="rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-8 text-center text-sm text-muted-foreground">Photo placeholder: CLUB-RENTALS-03.jpg</div>
+          {[rentalPhoto1, rentalPhoto2, rentalPhoto3].map((photo, index) => (
+            <div key={index} className="overflow-hidden rounded-xl border border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
+              <img src={photo} alt={`Rental photo ${index + 1}`} className="h-60 w-full object-cover" />
+            </div>
+          ))}
         </div>
       </Section>
 

@@ -1,36 +1,44 @@
 import { Link } from '@tanstack/react-router'
 import { Section } from '../components/Section'
 import { ArrowRight, BadgeCheck, Building2, CalendarDays, Camera, PhoneCall, Sparkles, UsersRound } from 'lucide-react'
+import heroPhoto from '../assets/images/IMG_9942.JPEG'
+import leaguePhoto from '../assets/images/IMG_9944.JPEG'
+import bonspielPhoto from '../assets/images/IMG_9977.JPEG'
+import glowPhoto from '../assets/images/IMG_7132.JPEG'
+import lifePhoto from '../assets/images/FullSizeRender.jpeg'
+import newsPhoto from '../assets/images/IMG_9456.JPEG'
+import rentalsPhoto from '../assets/images/IMG_9908.jpeg'
+import contactPhoto from '../assets/images/IMG_9944.JPEG'
 
-const heroImage = 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80'
+const heroImage = heroPhoto
 
 const quickLinks = [
   {
     title: 'How do I join a league?',
     description: 'We offer a range of leagues for seniors, men, ladies, mixed, and youth curlers.',
     to: '/leagues',
-    image: 'https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=900&q=80',
+    image: leaguePhoto,
     icon: UsersRound,
   },
   {
     title: 'What bonspiels are coming up?',
     description: 'Our season includes several community bonspiels and special events.',
     to: '/bonspiels',
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80',
+    image: bonspielPhoto,
     icon: CalendarDays,
   },
   {
     title: 'Can I rent the club?',
     description: 'The clubhouse and event space are available for community gatherings and celebrations.',
     to: '/rentals',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+    image: rentalsPhoto,
     icon: Building2,
   },
   {
     title: 'What’s happening at the club?',
     description: 'Follow the latest updates, announcements, and community news here.',
     to: '/news',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80',
+    image: newsPhoto,
     icon: Sparkles,
   },
 ]
@@ -40,25 +48,25 @@ const upcomingBonspiels = [
     name: 'Men’s Bonspiel',
     details: 'Typically held the first weekend after New Year’s and often runs through the weekend.',
     link: '/bonspiels',
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80',
+    image: leaguePhoto,
   },
   {
     name: 'Seniors Daytime Bonspiel',
     details: 'Usually held in the third or fourth week of January with daytime games and lunch.',
     link: '/bonspiels',
-    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80',
+    image: bonspielPhoto,
   },
   {
     name: 'Ladies Bonspiel',
     details: 'Traditionally hosted the first weekend in February.',
     link: '/bonspiels',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80',
+    image: glowPhoto,
   },
   {
     name: 'Mixed Glow Bonspiel',
     details: 'Usually held in the third weekend in February.',
     link: '/bonspiels',
-    image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80',
+    image: newsPhoto,
   },
 ]
 
@@ -137,7 +145,7 @@ export function HomePage() {
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1521417531039-57f66d3f6f6d?auto=format&fit=crop&w=1100&q=80"
+                  src={leaguePhoto}
                   alt="Members gathered around the curling club"
                   className="h-64 w-full object-cover"
                 />
@@ -170,7 +178,7 @@ export function HomePage() {
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-1471295253337-3ceaaedca402?auto=format&fit=crop&w=1100&q=80"
+              src={bonspielPhoto}
               alt="Curling club event layout"
               className="h-72 w-full object-cover"
             />
@@ -194,7 +202,7 @@ export function HomePage() {
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1100&q=80"
+              src={rentalsPhoto}
               alt="Warm interior gathering space"
               className="h-72 w-full object-cover"
             />
@@ -220,7 +228,7 @@ export function HomePage() {
           <div className="space-y-4">
             <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1100&q=80"
+                src={newsPhoto}
                 alt="Community life at the curling club"
                 className="h-60 w-full object-cover"
               />
@@ -239,10 +247,10 @@ export function HomePage() {
               <h3 className="font-display text-2xl text-[#7A1F2B]">Life at Argyle Curling Club</h3>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              A live Instagram feed can be added here in a future update. Until then, we are using photo placeholders and social links to keep the section ready for fresh content.
+              Follow the club on social media for live updates and fresh photos from our leagues, events, and community nights.
             </p>
-            <div className="mt-6 rounded-[1.25rem] border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-6 text-center text-sm text-muted-foreground">
-              Photo placeholder: LIFE-AT-CLUB-01.jpg
+            <div className="mt-6 overflow-hidden rounded-[1.25rem] border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
+              <img src={lifePhoto} alt="Club members enjoying a glow curling event" className="h-72 w-full object-cover" />
             </div>
             <div className="mt-6 space-y-3">
               {socialLinks.map((link) => (
@@ -260,7 +268,7 @@ export function HomePage() {
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1100&q=80"
+              src={newsPhoto}
               alt="Warm community gathering at the curling club"
               className="h-72 w-full object-cover"
             />
@@ -280,7 +288,7 @@ export function HomePage() {
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
           <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
             <img
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1100&q=80"
+              src={contactPhoto}
               alt="Friendly club contact setting"
               className="h-72 w-full object-cover"
             />

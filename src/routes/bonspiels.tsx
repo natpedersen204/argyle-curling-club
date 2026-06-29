@@ -1,6 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight } from 'lucide-react'
+import menPhoto from '../assets/images/IMG_7132.JPEG'
+import seniorsPhoto from '../assets/images/IMG_7300.JPEG'
+import ladiesPhoto from '../assets/images/IMG_9456.JPEG'
+import glowPhoto from '../assets/images/IMG_9977.JPEG'
+import crockattPhoto from '../assets/images/IMG_9908.jpeg'
 
 const bonspiels = [
   {
@@ -11,7 +16,7 @@ const bonspiels = [
     included: 'Saturday night supper, Calcutta Auction, live entertainment, and food and drink specials throughout the event.',
     contact: 'Chad Thoresby',
     registration: 'Registration often fills quickly. Please contact the club president or email argylecurlingclub@gmail.com for updates.',
-    photo: 'MENS-BONSPIEL-01.jpg',
+    photo: menPhoto,
   },
   {
     name: 'Seniors Daytime Bonspiel',
@@ -21,7 +26,7 @@ const bonspiels = [
     included: 'Breakfast of donuts and muffins, plus lunch of soup and sandwiches.',
     contact: 'Bruce Buchanan',
     registration: 'Please contact the club for current registration details and availability.',
-    photo: 'SENIORS-BONSPIEL-01.jpg',
+    photo: seniorsPhoto,
   },
   {
     name: 'Ladies Bonspiel',
@@ -31,7 +36,7 @@ const bonspiels = [
     included: 'A fun, social day of curling with an emphasis on community and fellowship.',
     contact: 'Pam Crockatt',
     registration: 'Registration information is shared through the club as the event approaches. Contact the club for updates.',
-    photo: 'LADIES-BONSPIEL-01.jpg',
+    photo: ladiesPhoto,
   },
   {
     name: 'Mixed Glow Bonspiel',
@@ -41,7 +46,7 @@ const bonspiels = [
     included: 'A festive atmosphere with community spirit and a fun event format.',
     contact: 'Riley Buchanan',
     registration: 'Please reach out to the club president or email argylecurlingclub@gmail.com for registration information.',
-    photo: 'GLOW-BONSPIEL-01.jpg',
+    photo: glowPhoto,
   },
   {
     name: 'Colin Crockatt Classic',
@@ -51,7 +56,7 @@ const bonspiels = [
     included: 'A full event day with friendly competition and the club’s usual warm hospitality.',
     contact: 'Travis Lawrence & Kyle Grandmont',
     registration: 'Please contact the club for registration timing and details.',
-    photo: 'CROCKATT-01.jpg',
+    photo: crockattPhoto,
   },
 ]
 
@@ -90,8 +95,8 @@ export function BonspielsPage() {
                   <p className="text-sm font-semibold uppercase tracking-wide text-gold">Contact person</p>
                   <p className="mt-2 font-semibold text-charcoal">{spiel.contact}</p>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{spiel.registration}</p>
-                  <div className="mt-6 rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] p-6 text-center text-sm text-muted-foreground">
-                    Photo placeholder: {spiel.photo}
+                  <div className="mt-6 overflow-hidden rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
+                    <img src={spiel.photo} alt={`${spiel.name} photo`} className="h-48 w-full object-cover" />
                   </div>
                 </div>
               </div>
