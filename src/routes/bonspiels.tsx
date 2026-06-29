@@ -9,9 +9,9 @@ import crockattPhoto from '../assets/images/IMG_3636.jpeg'
 
 const bonspiels = [
   {
-    name: 'Menâ€™s Bonspiel',
-    title: 'Menâ€™s Bonspiel',
-    typicalDates: 'First weekend after New Yearâ€™s',
+    name: "Men's Bonspiel",
+    title: "Men's Bonspiel",
+    typicalDates: "First weekend after New Year's",
     format: 'Often runs from Wednesday or Thursday evening through Sunday. Depending on the number of teams, the event may include a three-game guarantee with 8-end games.',
     included: 'Saturday night supper, Calcutta Auction, live entertainment, and food and drink specials throughout the event.',
     contact: 'Chad Thoresby',
@@ -57,7 +57,7 @@ const bonspiels = [
     title: 'Colin Crockatt Classic',
     typicalDates: 'Third weekend in March',
     format: 'An open and mixed bonspiel that is popular with both local and visiting teams.',
-    included: 'A full event day with friendly competition and the clubâ€™s usual warm hospitality.',
+    included: "A full event day with friendly competition and the club's usual warm hospitality.",
     contact: 'Travis Lawrence & Kyle Grandmont',
     registration: 'Please contact the club for registration timing and details.',
     photo: crockattPhoto,
@@ -91,7 +91,7 @@ export function BonspielsPage() {
                       <p className="mt-1">{spiel.typicalDates}</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-charcoal">Whatâ€™s included</p>
+                      <p className="font-semibold text-charcoal">What's included</p>
                       <p className="mt-1">{spiel.included}</p>
                     </div>
                   </div>
