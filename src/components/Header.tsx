@@ -46,14 +46,7 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li className="ml-2">
-              <Link
-                to="/contact"
-                className="inline-flex items-center rounded-md bg-[#C8A24A] px-4 py-2 text-sm font-semibold text-[#5A1620] shadow-soft transition-colors hover:bg-[#D8B96A]"
-              >
-                Contact Us
-              </Link>
-            </li>
+
           </ul>
         </nav>
 
@@ -85,15 +78,7 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
-              <Link
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className="block rounded-md bg-[#C8A24A] px-4 py-3 text-center text-sm font-semibold text-[#5A1620]"
-              >
-                Contact the Club
-              </Link>
-            </li>
+
           </ul>
         </nav>
       )}
