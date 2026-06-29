@@ -27,7 +27,7 @@ const values = [
 const boardMembers = [
   { position: 'President', name: 'Chad Thoresby' },
   { position: 'Treasurer', name: 'Pam Crockatt' },
-  { position: 'Bar Manager', name: 'Ryley Buchanan' },
+  { position: 'Bar Manager', name: 'Ryley Holod' },
   { position: 'Ice Techs', name: 'Riley Buchanan & Trevor Buchanan' },
   { position: 'Men’s League Rep', name: 'Robert Nolting' },
   { position: 'Ladies League Rep', name: 'Virginia Crockatt' },
