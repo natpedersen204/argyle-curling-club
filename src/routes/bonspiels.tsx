@@ -49,6 +49,7 @@ const bonspiels = [
     included: 'Includes a Saturday night supper. A festive atmosphere with community spirit and a fun event format.',
     contact: 'Riley Buchanan',
     registration: 'Please reach out to the club president or email argylecurlingclub@gmail.com for registration information.',
+    glowLink: true,
     photo: glowPhoto,
     photoPosition: 'object-center',
   },
@@ -100,6 +101,12 @@ export function BonspielsPage() {
                   <p className="text-sm font-semibold uppercase tracking-wide text-gold">Contact person</p>
                   <p className="mt-2 font-semibold text-charcoal">{spiel.contact}</p>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{spiel.registration}</p>
+                  {spiel.glowLink && (
+                    <Link to="/glow" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#7A1F2B] hover:text-[#5A1620]">
+                      <span>Experience Glow Curling</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  )}
                   <div className="mt-6 overflow-hidden rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
                     <img src={spiel.photo} alt={`${spiel.name} photo`} className={`h-48 w-full object-cover ${spiel.photoPosition}`} />
                   </div>

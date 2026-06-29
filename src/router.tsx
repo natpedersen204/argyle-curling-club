@@ -7,6 +7,7 @@ import { BonspielsPage } from './routes/bonspiels'
 import { RentalsPage } from './routes/rentals'
 import { SponsorsPage } from './routes/sponsors'
 import { ContactPage } from './routes/contact'
+import { GlowPage } from './routes/glow'
 
 const rootRoute = createRootRoute({ component: Root })
 
@@ -17,6 +18,7 @@ const bonspielsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/bo
 const rentalsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/rentals', component: RentalsPage })
 const sponsorsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/sponsors', component: SponsorsPage })
 const contactRoute = createRoute({ getParentRoute: () => rootRoute, path: '/contact', component: ContactPage })
+const glowRoute = createRoute({ getParentRoute: () => rootRoute, path: '/glow', component: GlowPage })
 
 export const router = createRouter({
   routeTree: rootRoute.addChildren([
@@ -27,6 +29,7 @@ export const router = createRouter({
     rentalsRoute,
     sponsorsRoute,
     contactRoute,
+    glowRoute,
   ]),
 })
 
