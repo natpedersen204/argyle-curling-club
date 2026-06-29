@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+﻿import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
 import { ArrowRight } from 'lucide-react'
 import schedulePhoto1 from '../assets/images/IMG_9016.jpeg'
@@ -8,23 +8,23 @@ const leagueTable = [
   {
     league: 'Seniors League',
     day: 'Tuesday',
-    time: 'Morning',
+    time: 'Mornings',
     contact: 'Lyle Appleyard',
     phone: 'Phone TBD',
     fee: 'Fee TBD',
   },
   {
-    league: 'Men’s League',
+    league: "Men's League",
     day: 'Wednesday',
-    time: 'Evening',
+    time: 'Nights',
     contact: 'Robert Nolting',
     phone: 'Phone TBD',
     fee: 'Fee TBD',
   },
   {
-    league: 'Drop In (Open)',
+    league: 'Open Drop In',
     day: 'Thursday',
-    time: 'Morning',
+    time: 'Mornings',
     contact: 'Terry Billingham',
     phone: 'Phone TBD',
     fee: 'Fee TBD',
@@ -32,15 +32,15 @@ const leagueTable = [
   {
     league: 'Ladies League',
     day: 'Thursday',
-    time: 'Evening',
+    time: 'Nights',
     contact: 'Virginia Crockatt',
     phone: 'Phone TBD',
     fee: 'Fee TBD',
   },
   {
     league: 'Youth League',
-    day: 'Every second Sunday',
-    time: 'Afternoon',
+    day: 'Every Second Sunday',
+    time: '',
     contact: 'Sarah Barton',
     phone: 'Phone TBD',
     fee: 'Fee TBD',
@@ -50,31 +50,31 @@ const leagueTable = [
 const leagueCards = [
   {
     name: 'Seniors League',
-    description: 'A welcoming morning league with a long history in the club and a strong emphasis on community.',
+    description: 'A welcoming Tuesday morning league with a long history in the club and a strong emphasis on community.',
     skill: 'All skill levels',
     welcome: 'Newcomers are always welcome to join the fun.',
   },
   {
-    name: 'Men’s League',
-    description: 'A regular evening league for members who enjoy a more structured weekly game.',
-    skill: 'Intermediate to competitive',
+    name: "Men's League",
+    description: 'A Wednesday night league for members who enjoy a more structured weekly game.',
+    skill: 'All skill levels',
     welcome: 'Friendly competition and a strong social atmosphere.',
   },
   {
-    name: 'Drop In (Open)',
-    description: 'A flexible option for curlers who want a relaxed, open session during the week.',
+    name: 'Open Drop In',
+    description: 'A flexible Thursday morning option for curlers who want a relaxed, open session during the week.',
     skill: 'Open to all',
     welcome: 'A great way to try the game or get on the ice without committing to a full team schedule.',
   },
   {
     name: 'Ladies League',
-    description: 'An evening league with a strong social side and a welcoming atmosphere.',
+    description: 'A Thursday night league with a strong social side and a welcoming atmosphere.',
     skill: 'All skill levels',
     welcome: 'A good fit for experienced curlers and first-time participants alike.',
   },
   {
     name: 'Youth League',
-    description: 'A fun, supportive option for younger curlers and their families.',
+    description: 'A fun, supportive option for younger curlers and their families, held every second Sunday.',
     skill: 'Beginner to developing',
     welcome: 'The youth league is designed to be encouraging and easy to join.',
   },
