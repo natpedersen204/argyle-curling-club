@@ -303,7 +303,7 @@ export function HomePage() {
               For questions about joining, hosting an event, or staying connected, the club is glad to help.
             </p>
             <div className="mt-5 space-y-3 text-sm text-muted-foreground">
-              <p><span className="font-semibold text-[#7A1F2B]">Phone:</span> (204) 555-0100</p>
+              <p><span className="font-semibold text-[#7A1F2B]">Phone:</span> (204) 461-0009</p>
               <p><span className="font-semibold text-[#7A1F2B]">Email:</span> info@argylecurling.ca</p>
               <p><span className="font-semibold text-[#7A1F2B]">Address:</span> 41 E PR 323, Argyle, MB R0C 0B0</p>
             </div>

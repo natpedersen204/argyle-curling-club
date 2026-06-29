@@ -193,8 +193,8 @@ export function ContactPage() {
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <div>
                     <p className="font-medium text-charcoal">Phone</p>
-                    <a href="tel:+12045550100" className="text-muted-foreground hover:text-burgundy">
-                      (204) 555-0100
+                    <a href="tel:+12044610009" className="text-muted-foreground hover:text-burgundy">
+                      (204) 461-0009
                     </a>
                   </div>
                 </li>
