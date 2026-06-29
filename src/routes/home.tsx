@@ -50,11 +50,7 @@ const upcomingBonspiels = [
 
 
 
-const sponsors = [
-  { name: 'Sponsor Name TBD', blurb: 'Local support for club events and community activities.' },
-  { name: 'Sponsor Name TBD', blurb: 'Community partnership placeholder.' },
-  { name: 'Sponsor Name TBD', blurb: 'Supporter of the club and its events.' },
-]
+
 
 export function HomePage() {
   return (
@@ -181,25 +177,7 @@ export function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow="Community support" title="Sponsors" className="rounded-[2rem] border border-[#e7dac4] bg-[#f8f3e8] px-4 py-14 shadow-[0_16px_45px_rgba(26,26,26,0.05)] sm:px-8 lg:px-10 lg:py-16">
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
-            <img
-              src={newsPhoto}
-              alt="Warm community gathering at the curling club"
-              className="h-72 w-full object-cover"
-            />
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {sponsors.map((sponsor) => (
-              <div key={sponsor.name} className="rounded-[1.25rem] border border-[#e7dac4] bg-white/80 p-6 shadow-sm">
-                <h3 className="font-display text-xl text-[#7A1F2B]">{sponsor.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{sponsor.blurb}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+
 
       <Section eyebrow="Get in touch" title="Contact Information" className="rounded-[2rem] border border-[#e7dac4] bg-[#f7efe0] px-4 py-14 shadow-[0_16px_45px_rgba(26,26,26,0.05)] sm:px-8 lg:px-10 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
