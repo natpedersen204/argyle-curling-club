@@ -19,7 +19,7 @@ export function Footer() {
           </div>
           <p className="mt-4 text-sm leading-relaxed text-white/70">
             A volunteer-run, family-friendly curling club proudly serving Argyle and surrounding
-            communities in Manitoba since 1948.
+            communities in Manitoba since 1939.
           </p>
         </div>
 

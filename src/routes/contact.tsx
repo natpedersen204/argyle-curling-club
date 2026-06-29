@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { PageHero, Section } from '../components/Section'
-import { Mail, MapPin, Phone, Clock, ArrowRight } from 'lucide-react'
+import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react'
 
 const schema = z.object({
   name: z.string().min(2, 'Please enter your name'),
@@ -35,16 +35,6 @@ const contactTopics = [
     description: 'Use this for general information, club updates, or to be directed to the right volunteer.',
     to: '/contact',
   },
-]
-
-const hours = [
-  { day: 'Monday', time: 'Closed (no league play)' },
-  { day: 'Tuesday', time: 'Closed (no league play)' },
-  { day: 'Wednesday', time: '12:00 PM – 4:00 PM (Ladies\' League)' },
-  { day: 'Thursday', time: '6:00 PM – 10:00 PM (Men\'s League)' },
-  { day: 'Friday', time: '6:00 PM – 10:00 PM (Mixed League)' },
-  { day: 'Saturday', time: '8:30 AM – 12:00 PM (Youth League)' },
-  { day: 'Sunday', time: 'Closed' },
 ]
 
 export function ContactPage() {
@@ -220,24 +210,6 @@ export function ContactPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-border bg-card p-6">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-gold" />
-                <h3 className="font-display text-xl text-burgundy">Club Hours</h3>
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">During the 2025–26 season (Oct – Mar)</p>
-              <ul className="mt-4 space-y-2">
-                {hours.map(({ day, time }) => (
-                  <li key={day} className="flex justify-between gap-4 text-sm">
-                    <span className="font-medium text-charcoal">{day}</span>
-                    <span className="text-right text-muted-foreground">{time}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-xs text-muted-foreground">
-                Hours extend for bonspiel weekends. Check our news page for updates.
-              </p>
-            </div>
           </div>
         </div>
       </Section>
