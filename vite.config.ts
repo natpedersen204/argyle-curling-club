@@ -9,4 +9,5 @@ export default defineConfig({
     tailwindcss(),
     tsconfigPaths(),
   ],
+  assetsInclude: ['**/*.JPEG', '**/*.JPG', '**/*.PNG', '**/*.MOV', '**/*.MP4'],
 })
