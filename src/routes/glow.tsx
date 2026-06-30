@@ -195,12 +195,6 @@ const faqs = [
   { q: 'Can I book a private Glow event?', a: 'Yes. The club has hosted private birthday parties, corporate groups, and community events. Reach out through the Contact page to discuss availability and pricing.' },
 ]
 
-const facts = [
-  { label: 'Season Launched', value: '2021' },
-  { label: 'Communities',     value: '9+' },
-  { label: 'Teams in 2025',   value: '~20' },
-  { label: 'Seasons Strong',  value: '4' },
-]
 
 export function GlowPage() {
   const [glow, setGlow] = useState(() => {
@@ -469,23 +463,6 @@ export function GlowPage() {
             style={{ background: theme.cardBg, border: `1px solid ${theme.cardBorder}`, boxShadow: theme.cardShadow }}>
             <p className={`text-sm ${tr}`} style={{ color: theme.muted }}>Video coming soon</p>
           </div>
-        </div>
-      </section>
-
-      {/* Fun Facts */}
-      <section className={`container-page py-24 ${tr}`}>
-        <div className="mx-auto mb-14 max-w-xl text-center">
-          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>By the Numbers</p>
-          <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>Glow Night at a Glance</h2>
-        </div>
-        <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
-          {facts.map(fact => (
-            <div key={fact.label} className={`rounded-2xl border p-8 text-center ${tr}`}
-              style={{ background: theme.cardBg, borderColor: theme.cardBorder, boxShadow: theme.cardShadow }}>
-              <p className={`font-display text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{fact.value}</p>
-              <p className={`mt-3 text-xs font-semibold uppercase tracking-widest ${tr}`} style={{ color: theme.muted }}>{fact.label}</p>
-            </div>
-          ))}
         </div>
       </section>
 
