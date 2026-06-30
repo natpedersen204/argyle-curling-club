@@ -1,53 +1,179 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from '@tanstack/react-router'
-import { X, ChevronLeft, ChevronRight, Moon, Sun } from 'lucide-react'
+import {
+  X, ChevronLeft, ChevronRight, Moon, Sun,
+  Zap, Music, Sparkles, Coffee, Heart, Trophy, ArrowRight,
+} from 'lucide-react'
 import glowHeroImg from '../assets/images/IMG_3064.JPEG'
-import g1 from '../assets/images/IMG_2627.jpeg'
-import g2 from '../assets/images/IMG_1364.jpeg'
-import g3 from '../assets/images/IMG_3062.JPEG'
-import g4 from '../assets/images/IMG_3063.JPEG'
-import g5 from '../assets/images/IMG_2626.jpeg'
-import g6 from '../assets/images/IMG_2624.jpeg'
+import g1 from '../assets/images/IMG_3074.JPEG'
+import g1b from '../assets/images/IMG_3065.JPEG'
+import g2 from '../assets/images/IMG_2627.jpeg'
+import g3 from '../assets/images/74874A57-CCCA-49CF-B15A-D2FEAEEA1C36.JPG'
+import g4 from '../assets/images/IMG_1364.jpeg'
+import g5 from '../assets/images/IMG_3062.JPEG'
+import g6 from '../assets/images/IMG_3063.JPEG'
+import g7 from '../assets/images/IMG_2626.jpeg'
+import g8 from '../assets/images/IMG_2624.jpeg'
+import news2021 from '../assets/images/glow/dec 2021 glow.png'
+import news2023 from '../assets/images/glow/2023 glow.png'
+import news2024 from '../assets/images/glow/2nd ladies.png'
+import news2025 from '../assets/images/glow/3rd ladies.png'
 
 const galleryImages = [
-  { src: g1, caption: 'Glow Curling Night' },
-  { src: g2, caption: 'Teams lighting up the ice' },
-  { src: g3, caption: 'The rink under black lights' },
-  { src: g4, caption: 'Curling under the glow' },
-  { src: g5, caption: 'Neon night on the ice' },
-  { src: g6, caption: 'Another great glow night' },
+  { src: g1,  caption: 'The Rock Bottoms — costumes are part of the tradition' },
+  { src: g1b, caption: 'The full rink under black lights' },
+  { src: g2,  caption: 'The rink transformed under black lights' },
+  { src: g3,  caption: 'A full sheet of glow curling in action' },
+  { src: g4,  caption: 'Neon outfits and glowing rocks' },
+  { src: g5,  caption: 'Competing under the lights' },
+  { src: g6,  caption: 'Curlers on the glowing ice' },
+  { src: g7,  caption: 'Glow Night at the Argyle Curling Club' },
+  { src: g8,  caption: 'A night to remember' },
+]
+
+interface NewsArticle {
+  year: string
+  headline: string
+  publication: string
+  date: string
+  summary: string
+  src: string
+  alt: string
+}
+
+const newsArticles: NewsArticle[] = [
+  {
+    year: 'December 2021',
+    headline: 'Glow Curling Begins',
+    publication: 'Stonewall Teulon Tribune',
+    date: 'December 23, 2021',
+    summary: 'Glow Curling is introduced at the Argyle Curling Club, beginning with Friday League curlers before expanding into birthday parties, Christmas parties and community events.',
+    src: news2021,
+    alt: 'Stonewall Teulon Tribune, December 23 2021: Argyle Curling Club offers glow curling, bonspiels',
+  },
+  {
+    year: 'February 2023',
+    headline: 'The First Glow Bonspiel Returns',
+    publication: 'Stonewall Teulon Tribune',
+    date: 'February 2, 2023',
+    summary: 'Following a winter storm that postponed the inaugural event, volunteers return with an even bigger Glow Bonspiel featuring additional lighting, glowing rocks, decorations and music.',
+    src: news2023,
+    alt: 'Stonewall Teulon Tribune, February 2 2023: Argyle Glow Bonspiel to light up the rink',
+  },
+  {
+    year: 'February 2024',
+    headline: 'Glow Continues to Grow',
+    publication: 'Stonewall Teulon Tribune',
+    date: 'February 8, 2024',
+    summary: 'The Ladies Glow Bonspiel expands the tradition as teams travel from communities across Manitoba. Creative costumes, music and community become defining parts of the experience.',
+    src: news2024,
+    alt: 'Stonewall Teulon Tribune, February 8 2024: Glowing reviews for Argyle ladies bonspiel',
+  },
+  {
+    year: 'February 2025',
+    headline: 'A Full Community Experience',
+    publication: 'Stonewall Teulon Tribune',
+    date: 'February 13, 2025',
+    summary: 'With approximately 20 teams, themed activities, dancing, glow games and elaborate costumes, Glow Curling has evolved into much more than a traditional bonspiel.',
+    src: news2025,
+    alt: 'Stonewall Teulon Tribune, February 13 2025: Third annual Argyle Ladies Bonspiel a glowing success',
+  },
 ]
 
 const features = [
-  { icon: '🥌', title: 'Curling Under Black Lights', description: 'The ice comes alive with neon stones and glowing targets. Everything you know about curling, turned up a few notches.' },
-  { icon: '🎵', title: 'Music All Night', description: 'A great playlist keeps the energy up from the first rock to the last end.' },
-  { icon: '👕', title: 'Creative Costumes', description: 'Neon, glow-in-the-dark, and blacklight outfits are highly encouraged. The more creative, the better.' },
-  { icon: '🍕', title: 'Food & Drinks', description: 'The bar is open and the kitchen is running. Fuel up between ends.' },
-  { icon: '😂', title: 'Community Atmosphere', description: 'Friendly, fun, and wide open to all skill levels. This is curling the way it was meant to be enjoyed.' },
-  { icon: '🏆', title: 'Friendly Competition', description: 'Teams compete but the real prize is the memories. Bragging rights included.' },
+  { Icon: Zap,      title: 'Black Light Ice',        description: 'The rink transforms completely under black lights. Glowing rocks, neon lane dividers, and fluorescent outfits make the whole sheet come alive.' },
+  { Icon: Music,    title: 'Music All Night',         description: 'A great playlist runs from the first rock to the last end. The soundtrack has become as much a part of Glow Night as the curling itself.' },
+  { Icon: Sparkles, title: 'Creative Costumes',       description: 'Neon outfits and blacklight-reactive clothing are part of the tradition. Teams plan their looks weeks in advance. Costume prizes are awarded every year.' },
+  { Icon: Coffee,   title: 'Food and Drinks',         description: 'The bar is open and the kitchen is running. Fuel up between ends and linger after your last rock.' },
+  { Icon: Heart,    title: 'Community at the Centre', description: 'Friendly and welcoming at all skill levels. Glow Night brings together first-timers and experienced curlers in the same spirit.' },
+  { Icon: Trophy,   title: 'Friendly Competition',    description: 'There are games to win and prizes to earn. But the real prize is the stories you leave with.' },
+]
+
+const milestones = [
+  { year: 'Dec 2021', title: 'The First Glow Night',       description: 'Introduced during Friday League play. The response was immediate. Birthday parties and community rentals followed quickly.' },
+  { year: '2022',     title: 'Planning the First Bonspiel', description: 'Volunteers planned the first Glow Bonspiel. A winter storm forced a postponement. The team kept refining it.' },
+  { year: '2023',     title: 'The Return',                  description: 'Glow Curling returned with more lighting, glowing rocks, music, decorations, glow paint, and themed prizes.' },
+  { year: '2024',     title: 'A Destination Event',         description: 'The Ladies Bonspiel adopted the Glow theme. Teams arrived from nine communities across Manitoba.' },
+  { year: '2025',     title: 'A Full Evening',              description: 'Around 20 teams. Costumes, dancing, a glow scavenger hunt, bean bag toss, and a fully decorated clubhouse.' },
+]
+
+const chapters = [
+  {
+    label: 'Every Great Tradition Starts Somewhere',
+    year: 'December 2021',
+    paragraphs: [
+      'Someone turned off the overhead lights and switched on the black lights. The ice glowed. The rocks glowed. The people glowed. Nobody wanted it to stop.',
+      'What began as a simple experiment during Friday League play found an audience almost immediately. Word spread. Birthday parties booked the rink. Christmas gatherings wanted the full experience. The community had discovered something new about curling, and they kept coming back.',
+    ],
+    quote: null as string | null,
+  },
+  {
+    label: 'Growing Something Special',
+    year: '2022 and 2023',
+    paragraphs: [
+      'In 2022, the club set out to host its first Glow Bonspiel. A major winter storm had other plans. Rather than simply cancel and move on, the volunteers kept working — more lighting, better decorations, glowing rocks, glow paint for the house.',
+      'When 2023 arrived, Glow Curling returned bigger than before. Music filled the rink. Teams arrived in creative costumes. Themed prizes were awarded. The atmosphere had become just as important as the curling itself.',
+    ],
+    quote: 'Nobody knew exactly what to expect. By the third end, nobody wanted it to stop.' as string | null,
+  },
+  {
+    label: 'A Manitoba Tradition',
+    year: '2024',
+    paragraphs: [
+      'The reach of Glow Curling grew well beyond Argyle. When the Ladies Bonspiel adopted the Glow theme, teams arrived from communities across the region — Warren, Stonewall, Teulon, Balmoral, Carman, Lac du Bonnet, Steinbach, and Winnipeg among them.',
+      'Glow Curling had become a destination event. People were planning weeks in advance. The Stonewall Teulon Tribune took notice.',
+    ],
+    quote: null as string | null,
+  },
+  {
+    label: 'More Than Just the Lights',
+    year: '2025',
+    paragraphs: [
+      'Around 20 teams participated in 2025 — one of the largest turnouts yet. Teams coordinated costumes. A glow scavenger hunt wound through a fully decorated clubhouse. Music, dancing, bean bag toss, food, and prizes filled the evening.',
+      'What started as an idea to flip off the lights had grown into something the club could not have planned for. A small community found a way to make winter feel electric.',
+    ],
+    quote: null as string | null,
+  },
+]
+
+const experiencePills = ['Curling', 'Live Music', 'Creative Costumes', 'Food and Drinks', 'Themed Games', 'Prizes', 'Community']
+
+const closingLines = [
+  'Friends planning costumes weeks in advance.',
+  'Volunteers transforming the rink after everyone else has gone home.',
+  'First-time curlers discovering a sport they never expected to love.',
+  'Music filling the clubhouse.',
+  'Laughter between ends.',
+  'A small community creating an experience that people return for year after year.',
 ]
 
 const faqs = [
-  { q: 'What should I wear?', a: 'Anything that glows, fluoresces, or lights up under black lights. White and neon colours work great. The more creative, the better.' },
-  { q: 'Do I need curling experience?', a: 'Not at all. Glow Curling is designed to be fun and accessible for everyone, from first-timers to seasoned curlers.' },
-  { q: 'Is equipment supplied?', a: 'Yes. Rocks and brooms are provided. Just bring yourself, your team, and a sense of fun.' },
-  { q: 'Can kids participate?', a: 'Absolutely. Glow Curling is a family-friendly event and kids tend to be the most enthusiastic participants.' },
-  { q: 'How many people are on a team?', a: 'Standard curling teams are four players, but we can accommodate different group sizes. Contact us for details.' },
+  { q: 'What should I wear?',             a: 'Bright fluorescent colours produce the best effect under black lights. High-visibility safety clothing and true neon colours glow brilliantly. White appears brighter than normal but does not glow like fluorescent materials. The brighter the colour, the better the effect.' },
+  { q: 'Do I need curling experience?',    a: 'Not at all. Glow Curling is designed for everyone, from experienced curlers to complete beginners. The atmosphere is welcoming at all skill levels.' },
+  { q: 'Is equipment provided?',           a: 'Yes. We can provide sliders and brooms. Clean running shoes are all you need on your feet.' },
+  { q: 'Can I wear a costume?',            a: 'Absolutely. Creative costumes have become one of the highlights of Glow Curling. Many teams coordinate their outfits and costume prizes are often awarded throughout the evening.' },
+  { q: 'Is Glow Curling family friendly?', a: 'Yes. Glow Curling has hosted league events, birthday parties, community groups, and full bonspiels. All ages are welcome.' },
+  { q: 'How many people are on a team?',   a: 'Standard curling teams have four players. Contact us if your group has different numbers and we will do our best to accommodate.' },
+  { q: 'Can I book a private Glow event?', a: 'Yes. The club has hosted private birthday parties, corporate groups, and community events. Reach out through the Contact page to discuss availability and pricing.' },
 ]
 
 const facts = [
-  { label: 'Years Running', value: '5+' },
-  { label: 'Teams Per Event', value: '16' },
-  { label: 'Best Costume', value: 'TBD' },
-  { label: 'Avg. Attendance', value: '60+' },
+  { label: 'Season Launched', value: '2021' },
+  { label: 'Communities',     value: '9+' },
+  { label: 'Teams in 2025',   value: '~20' },
+  { label: 'Seasons Strong',  value: '4' },
 ]
 
 export function GlowPage() {
   const [glow, setGlow] = useState(() => {
     try { return localStorage.getItem('argyle-glow') === 'true' } catch { return false }
   })
-  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null)
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [lightboxIdx, setLightboxIdx]       = useState<number | null>(null)
+  const [newsLightboxIdx, setNewsLightboxIdx] = useState<number | null>(null)
+  const [openFaq, setOpenFaq]               = useState<number | null>(null)
+  const [newsVisible, setNewsVisible]       = useState(false)
+  const newsRef   = useRef<HTMLElement>(null)
+  const touchStartX = useRef(0)
 
   const toggle = () => {
     setGlow(prev => {
@@ -58,51 +184,73 @@ export function GlowPage() {
   }
 
   useEffect(() => {
-    if (lightboxIdx === null) return
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setLightboxIdx(null)
-      if (e.key === 'ArrowRight') setLightboxIdx(i => i !== null ? Math.min(i + 1, galleryImages.length - 1) : null)
-      if (e.key === 'ArrowLeft') setLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null)
+      if (e.key === 'Escape') { setLightboxIdx(null); setNewsLightboxIdx(null) }
+      if (lightboxIdx !== null) {
+        if (e.key === 'ArrowRight') setLightboxIdx(i => i !== null ? Math.min(i + 1, galleryImages.length - 1) : null)
+        if (e.key === 'ArrowLeft')  setLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null)
+      }
+      if (newsLightboxIdx !== null) {
+        if (e.key === 'ArrowRight') setNewsLightboxIdx(i => i !== null ? Math.min(i + 1, newsArticles.length - 1) : null)
+        if (e.key === 'ArrowLeft')  setNewsLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null)
+      }
     }
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
-  }, [lightboxIdx])
+  }, [lightboxIdx, newsLightboxIdx])
+
+  useEffect(() => {
+    const el = newsRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setNewsVisible(true); obs.disconnect() }
+    }, { threshold: 0.05 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   const tr = 'transition-all duration-[400ms]'
 
   const theme = {
-    bg:          glow ? '#080808' : '#f8f3e8',
-    altBg:       glow ? '#0d0d0d' : '#f0e9d8',
-    cardBg:      glow ? '#111111' : '#ffffff',
-    cardBorder:  glow ? 'rgba(255,0,170,0.25)' : '#e7dac4',
-    heading:     glow ? '#ff2eff' : '#7A1F2B',
-    accent:      glow ? '#ffee00' : '#C8A24A',
-    text:        glow ? '#f0f0f0' : '#2B2B2B',
-    muted:       glow ? 'rgba(240,240,240,0.6)' : 'rgba(43,43,43,0.65)',
-    headingGlow: glow ? '0 0 12px rgba(255,0,170,0.7)' : 'none',
-    cardShadow:  glow ? '0 0 16px rgba(255,0,170,0.08)' : '0 2px 8px rgba(0,0,0,0.04)',
-    photoBorder: glow ? '1px solid rgba(255,0,170,0.4)' : '1px solid #e7dac4',
-    photoShadow: glow ? '0 0 16px rgba(255,0,170,0.25)' : '0 2px 8px rgba(0,0,0,0.06)',
+    bg:           glow ? '#080808' : '#f8f3e8',
+    altBg:        glow ? '#0d0d0d' : '#f0e9d8',
+    cardBg:       glow ? '#111111' : '#ffffff',
+    cardBorder:   glow ? 'rgba(255,0,170,0.22)' : '#e7dac4',
+    heading:      glow ? '#ff2eff' : '#7A1F2B',
+    accent:       glow ? '#ffee00' : '#C8A24A',
+    text:         glow ? '#f0f0f0' : '#2B2B2B',
+    muted:        glow ? 'rgba(240,240,240,0.55)' : 'rgba(43,43,43,0.65)',
+    headingGlow:  glow ? '0 0 14px rgba(255,0,170,0.65), 0 0 40px rgba(255,0,170,0.2)' : 'none',
+    accentGlow:   glow ? '0 0 10px rgba(255,238,0,0.55)' : 'none',
+    cardShadow:   glow ? '0 0 20px rgba(255,0,170,0.05), 0 2px 12px rgba(0,0,0,0.5)' : '0 2px 8px rgba(0,0,0,0.04)',
+    photoBorder:  glow ? '1px solid rgba(255,0,170,0.3)' : '1px solid #e7dac4',
+    photoShadow:  glow ? '0 0 20px rgba(255,0,170,0.18)' : '0 2px 8px rgba(0,0,0,0.06)',
+    divider:      glow ? 'rgba(255,0,170,0.12)' : '#e7dac4',
+    timelineDot:  glow ? '#ff2eff' : '#7A1F2B',
+    timelineLine: glow ? 'rgba(255,0,170,0.3)' : '#e7dac4',
+    dotGlow:      glow ? '0 0 10px rgba(255,0,170,0.5), 0 0 20px rgba(255,0,170,0.2)' : 'none',
+    newsGlow:     glow ? '0 0 0 1px rgba(255,0,170,0.35), 0 0 16px rgba(255,0,170,0.12)' : '0 4px 16px rgba(0,0,0,0.08)',
   }
 
   return (
     <div style={{ background: theme.bg, color: theme.text }} className={tr}>
 
-      {/* Mode toggle strip */}
-      <div style={{ background: theme.altBg, borderBottom: `1px solid ${theme.cardBorder}` }} className={tr}>
+      {/* Toggle strip */}
+      <div style={{ background: theme.altBg, borderBottom: `1px solid ${theme.divider}` }} className={tr}>
         <div className="container-page flex items-center justify-between py-3">
-          <span style={{ color: theme.accent }} className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`}>
-            Glow Curling Night
+          <span className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>
+            Glow Curling
           </span>
           <button
             onClick={toggle}
             className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ${tr}`}
             style={{
-              background: glow ? 'rgba(255,0,170,0.12)' : 'rgba(122,31,43,0.08)',
-              border: `1px solid ${glow ? 'rgba(255,0,170,0.35)' : 'rgba(122,31,43,0.2)'}`,
+              background: glow ? 'rgba(255,0,170,0.1)' : 'rgba(122,31,43,0.07)',
+              border: `1px solid ${glow ? 'rgba(255,0,170,0.3)' : 'rgba(122,31,43,0.18)'}`,
               color: glow ? '#ff2eff' : '#7A1F2B',
-              boxShadow: glow ? '0 0 10px rgba(255,0,170,0.15)' : 'none',
+              boxShadow: glow ? '0 0 12px rgba(255,0,170,0.12)' : 'none',
             }}
+            aria-label={glow ? 'Switch to Classic Mode' : 'Switch to Glow Mode'}
           >
             {glow ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             {glow ? 'Classic Mode' : 'Enter Glow Mode'}
@@ -111,48 +259,34 @@ export function GlowPage() {
       </div>
 
       {/* Hero */}
-      <section className="relative isolate overflow-hidden" style={{ minHeight: '80vh' }}>
-        <img
-          src={glowHeroImg}
-          alt="Glow Curling at Argyle Curling Club"
+      <section className="relative isolate overflow-hidden" style={{ minHeight: '82vh' }}>
+        <img src={glowHeroImg} alt="Glow Curling at Argyle Curling Club"
           className={`absolute inset-0 h-full w-full object-cover ${tr}`}
-          style={{ filter: glow ? 'brightness(0.45) saturate(1.8)' : 'brightness(0.55)' }}
-        />
-        <div
-          className={`absolute inset-0 ${tr}`}
-          style={{
-            background: glow
-              ? 'linear-gradient(135deg, rgba(60,0,80,0.92) 0%, rgba(8,0,20,0.65) 70%, transparent 100%)'
-              : 'linear-gradient(135deg, rgba(26,8,12,0.9) 0%, rgba(26,8,12,0.5) 70%, transparent 100%)'
-          }}
-        />
-        <div className="container-page relative z-10 flex min-h-[80vh] items-end py-20">
+          style={{ filter: glow ? 'brightness(0.4) saturate(1.9)' : 'brightness(0.52)' }} />
+        <div className={`absolute inset-0 ${tr}`} style={{ background: glow
+          ? 'linear-gradient(135deg,rgba(55,0,75,0.94) 0%,rgba(8,0,22,0.6) 65%,transparent 100%)'
+          : 'linear-gradient(135deg,rgba(26,8,12,0.92) 0%,rgba(26,8,12,0.5) 65%,transparent 100%)' }} />
+        <div className="container-page relative z-10 flex min-h-[82vh] items-end py-20 lg:py-24">
           <div className="max-w-2xl">
-            <p className={`text-xs font-semibold uppercase tracking-[0.25em] ${tr}`} style={{ color: theme.accent, textShadow: glow ? '0 0 8px rgba(255,238,0,0.7)' : 'none' }}>
+            <p className={`text-xs font-semibold uppercase tracking-[0.28em] ${tr}`}
+              style={{ color: theme.accent, textShadow: glow ? '0 0 8px rgba(255,238,0,0.65)' : 'none' }}>
               Argyle Curling Club
             </p>
-            <h1 className={`mt-4 font-display text-5xl text-white sm:text-6xl lg:text-7xl ${tr}`} style={{ textShadow: glow ? '0 0 30px rgba(255,0,170,0.6), 0 0 60px rgba(255,0,170,0.3)' : 'none' }}>
+            <h1 className={`mt-4 font-display text-5xl text-white sm:text-6xl lg:text-7xl ${tr}`}
+              style={{ textShadow: glow ? '0 0 28px rgba(255,0,170,0.55),0 0 60px rgba(255,0,170,0.25)' : 'none' }}>
               Experience Glow Curling
             </h1>
-            <p className="mt-5 text-lg text-white/80">
-              When the lights go out, the fun begins.
+            <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80">
+              When the lights go out, the fun begins. One of Manitoba's most unique curling experiences, right here in Argyle.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <button
-                onClick={toggle}
+            <div className="mt-9 flex flex-wrap gap-4">
+              <button onClick={toggle}
                 className={`rounded-full px-7 py-3.5 text-sm font-semibold ${tr}`}
-                style={{
-                  background: glow ? '#C8A24A' : '#ff00aa',
-                  color: '#000000',
-                  boxShadow: glow ? 'none' : '0 0 24px rgba(255,0,170,0.55)',
-                }}
-              >
+                style={{ background: glow ? '#C8A24A' : '#ff00aa', color: '#000', boxShadow: glow ? 'none' : '0 0 24px rgba(255,0,170,0.5)' }}>
                 {glow ? 'Return to Classic' : 'Enter Glow Mode'}
               </button>
-              <Link
-                to="/bonspiels"
-                className={`rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm hover:border-white/60 ${tr}`}
-              >
+              <Link to="/bonspiels"
+                className={`rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm hover:border-white/55 hover:bg-white/15 ${tr}`}>
                 View All Bonspiels
               </Link>
             </div>
@@ -161,51 +295,105 @@ export function GlowPage() {
       </section>
 
       {/* Story */}
+      <section className={`container-page py-24 lg:py-32 ${tr}`}>
+        <div className="mx-auto max-w-3xl">
+          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Our Story</p>
+          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>How Glow Curling Began</h2>
+          {chapters.map((ch, i) => (
+            <div key={i} className="mt-16">
+              <div className="flex items-center gap-4 mb-5">
+                <span className="h-px flex-1" style={{ background: theme.divider }} />
+                <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>{ch.year}</span>
+                <span className="h-px flex-1" style={{ background: theme.divider }} />
+              </div>
+              <h3 className={`font-display text-2xl sm:text-3xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{ch.label}</h3>
+              <div className={`mt-5 space-y-4 text-base leading-relaxed ${tr}`} style={{ color: theme.muted }}>
+                {ch.paragraphs.map((p, j) => <p key={j}>{p}</p>)}
+              </div>
+              {ch.quote && (
+                <blockquote className={`my-8 border-l-4 py-2 pl-6 font-display text-xl italic ${tr}`}
+                  style={{ borderColor: theme.accent, color: theme.heading, textShadow: theme.headingGlow }}>
+                  {ch.quote}
+                </blockquote>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Milestones */}
+      <section className={`py-20 lg:py-24 ${tr}`} style={{ background: theme.altBg }}>
+        <div className="container-page">
+          <div className="mb-14 text-center">
+            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Milestones</p>
+            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>Five Seasons in the Making</h2>
+          </div>
+          <div className="hidden lg:block relative">
+            <div className="absolute top-[18px] left-[calc(10%+20px)] right-[calc(10%+20px)] h-px" style={{ background: theme.timelineLine }} />
+            <div className="grid grid-cols-5">
+              {milestones.map((m, i) => (
+                <div key={i} className="flex flex-col items-center px-3 text-center">
+                  <div className={`relative z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 text-xs font-bold ${tr}`}
+                    style={{ background: theme.cardBg, borderColor: theme.timelineDot, color: theme.timelineDot, boxShadow: theme.dotGlow }}>{i + 1}</div>
+                  <p className={`mt-3 text-xs font-semibold uppercase tracking-widest ${tr}`} style={{ color: theme.accent }}>{m.year}</p>
+                  <h4 className={`mt-2 font-display text-base leading-snug ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{m.title}</h4>
+                  <p className={`mt-2 text-xs leading-relaxed ${tr}`} style={{ color: theme.muted }}>{m.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="lg:hidden space-y-0">
+            {milestones.map((m, i) => (
+              <div key={i} className="flex gap-5">
+                <div className="flex flex-col items-center">
+                  <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${tr}`}
+                    style={{ background: theme.cardBg, borderColor: theme.timelineDot, color: theme.timelineDot, boxShadow: theme.dotGlow }}>{i + 1}</div>
+                  {i < milestones.length - 1 && <div className="mt-1 w-px flex-1" style={{ background: theme.timelineLine, minHeight: '2rem' }} />}
+                </div>
+                <div className="pb-8 pt-1">
+                  <p className={`text-xs font-semibold uppercase tracking-widest ${tr}`} style={{ color: theme.accent }}>{m.year}</p>
+                  <h4 className={`mt-1 font-display text-xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{m.title}</h4>
+                  <p className={`mt-2 text-sm leading-relaxed ${tr}`} style={{ color: theme.muted }}>{m.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* More Than a Bonspiel */}
       <section className={`container-page py-24 ${tr}`}>
         <div className="mx-auto max-w-3xl">
-          <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`} style={{ color: theme.accent }}>Our Story</p>
-          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>
-            How Glow Curling Began
-          </h2>
+          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>The Full Experience</p>
+          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>It is More Than a Bonspiel</h2>
           <div className={`mt-8 space-y-5 text-base leading-relaxed ${tr}`} style={{ color: theme.muted }}>
-            <p>
-              A few years ago, a small group of club members had a simple idea: what would happen if we turned off the lights, switched on the black lights, and let a curling night unfold? The answer, it turned out, was one of the most memorable evenings in recent club history.
-            </p>
-            <blockquote
-              className={`my-10 border-l-4 py-2 pl-6 font-display text-2xl italic ${tr}`}
-              style={{ borderColor: theme.accent, color: theme.heading, textShadow: theme.headingGlow }}
-            >
-              Nobody knew exactly what to expect. By the third end, nobody wanted it to stop.
-            </blockquote>
-            <p>
-              What started as a one-off experiment quickly became one of the most anticipated events on the Argyle calendar. Teams started showing up in neon outfits. The costumes got more creative each year. The music got louder. The laughter never stopped.
-            </p>
-            <p>
-              Today, the Mixed Glow Bonspiel is a signature event for the club. A night where the spirit of curling meets a whole lot of fun.
-            </p>
+            <p>Today, the Glow experience goes well beyond curling. Visitors arrive to a clubhouse that has been transformed for the evening — black lights on, music playing, neon decorations throughout.</p>
+            <p>Teams bring their best outfits. Games and activities fill the spaces between ends. The kitchen is open and the bar is stocked. Prizes are awarded for curling and for costumes alike.</p>
+            <p>The curling is still the centre of it all. But what keeps people coming back is the whole evening — the atmosphere, the people, the kind of night that is genuinely hard to describe until you have been there.</p>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {experiencePills.map(item => (
+              <span key={item} className={`rounded-full border px-4 py-1.5 text-sm font-medium ${tr}`}
+                style={{ borderColor: theme.cardBorder, background: theme.cardBg, color: theme.text }}>{item}</span>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className={`py-20 ${tr}`} style={{ background: theme.altBg }}>
+      <section className={`py-20 lg:py-24 ${tr}`} style={{ background: theme.altBg }}>
         <div className="container-page">
-          <div className="mx-auto max-w-xl text-center mb-14">
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`} style={{ color: theme.accent }}>Why Everyone Loves It</p>
-            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>
-              What Makes Glow Night Special
-            </h2>
+          <div className="mx-auto mb-14 max-w-xl text-center">
+            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>What to Expect</p>
+            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>What Makes Glow Night Special</h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map(f => (
-              <div
-                key={f.title}
-                className={`rounded-2xl border p-7 ${tr}`}
-                style={{ background: theme.cardBg, borderColor: theme.cardBorder, boxShadow: theme.cardShadow }}
-              >
-                <span className="text-4xl">{f.icon}</span>
-                <h3 className={`mt-4 font-display text-xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{f.title}</h3>
-                <p className={`mt-2 text-sm leading-relaxed ${tr}`} style={{ color: theme.muted }}>{f.description}</p>
+            {features.map(({ Icon, title, description }) => (
+              <div key={title} className={`rounded-2xl border p-7 ${tr}`}
+                style={{ background: theme.cardBg, borderColor: theme.cardBorder, boxShadow: theme.cardShadow }}>
+                <Icon className="h-6 w-6" style={{ color: theme.accent, filter: glow ? 'drop-shadow(0 0 6px rgba(255,238,0,0.5))' : 'none' }} />
+                <h3 className={`mt-4 font-display text-xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{title}</h3>
+                <p className={`mt-2 text-sm leading-relaxed ${tr}`} style={{ color: theme.muted }}>{description}</p>
               </div>
             ))}
           </div>
@@ -214,30 +402,19 @@ export function GlowPage() {
 
       {/* Gallery */}
       <section className={`container-page py-24 ${tr}`}>
-        <div className="mx-auto max-w-xl text-center mb-14">
-          <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`} style={{ color: theme.accent }}>From the Ice</p>
-          <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>
-            Glow Nights in Photos
-          </h2>
+        <div className="mx-auto mb-14 max-w-xl text-center">
+          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>From the Ice</p>
+          <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>Glow Nights in Photos</h2>
           <p className={`mt-3 text-sm ${tr}`} style={{ color: theme.muted }}>Click any photo to view full size.</p>
         </div>
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
           {galleryImages.map((img, i) => (
-            <div
-              key={i}
-              className={`mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-xl ${tr}`}
+            <div key={i} className={`mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-xl ${tr}`}
               style={{ border: theme.photoBorder, boxShadow: theme.photoShadow }}
-              onClick={() => setLightboxIdx(i)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && setLightboxIdx(i)}
-            >
-              <img
-                src={img.src}
-                alt={img.caption}
-                className="w-full object-cover transition-transform duration-300 hover:scale-[1.03]"
-                loading="lazy"
-              />
+              onClick={() => setLightboxIdx(i)} role="button" tabIndex={0}
+              aria-label={`View photo: ${img.caption}`}
+              onKeyDown={e => e.key === 'Enter' && setLightboxIdx(i)}>
+              <img src={img.src} alt={img.caption} className="w-full object-cover transition-transform duration-300 hover:scale-[1.03]" loading="lazy" />
             </div>
           ))}
         </div>
@@ -246,16 +423,12 @@ export function GlowPage() {
       {/* Video */}
       <section className={`py-20 ${tr}`} style={{ background: theme.altBg }}>
         <div className="container-page">
-          <div className="mx-auto max-w-xl text-center mb-10">
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`} style={{ color: theme.accent }}>Watch</p>
-            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>
-              See Glow Curling in Action
-            </h2>
+          <div className="mx-auto mb-10 max-w-xl text-center">
+            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Watch</p>
+            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>See Glow Curling in Action</h2>
           </div>
-          <div
-            className={`mx-auto flex max-w-3xl aspect-video items-center justify-center rounded-2xl ${tr}`}
-            style={{ background: theme.cardBg, border: `1px solid ${theme.cardBorder}`, boxShadow: theme.cardShadow }}
-          >
+          <div className={`mx-auto flex aspect-video max-w-3xl items-center justify-center rounded-2xl ${tr}`}
+            style={{ background: theme.cardBg, border: `1px solid ${theme.cardBorder}`, boxShadow: theme.cardShadow }}>
             <p className={`text-sm ${tr}`} style={{ color: theme.muted }}>Video coming soon</p>
           </div>
         </div>
@@ -263,19 +436,14 @@ export function GlowPage() {
 
       {/* Fun Facts */}
       <section className={`container-page py-24 ${tr}`}>
-        <div className="mx-auto max-w-xl text-center mb-14">
-          <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`} style={{ color: theme.accent }}>By the Numbers</p>
-          <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>
-            Glow Night Facts
-          </h2>
+        <div className="mx-auto mb-14 max-w-xl text-center">
+          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>By the Numbers</p>
+          <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>Glow Night at a Glance</h2>
         </div>
         <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
           {facts.map(fact => (
-            <div
-              key={fact.label}
-              className={`rounded-2xl border p-8 text-center ${tr}`}
-              style={{ background: theme.cardBg, borderColor: theme.cardBorder, boxShadow: theme.cardShadow }}
-            >
+            <div key={fact.label} className={`rounded-2xl border p-8 text-center ${tr}`}
+              style={{ background: theme.cardBg, borderColor: theme.cardBorder, boxShadow: theme.cardShadow }}>
               <p className={`font-display text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{fact.value}</p>
               <p className={`mt-3 text-xs font-semibold uppercase tracking-widest ${tr}`} style={{ color: theme.muted }}>{fact.label}</p>
             </div>
@@ -283,38 +451,200 @@ export function GlowPage() {
         </div>
       </section>
 
+      {/* In the News */}
+      <section ref={newsRef} className={`py-20 lg:py-28 ${tr}`} style={{ background: theme.altBg }}>
+        <div className="container-page">
+          <div className="mx-auto mb-16 max-w-xl text-center">
+            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Press Coverage</p>
+            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>In the News</h2>
+            <p className={`mt-3 text-sm leading-relaxed ${tr}`} style={{ color: theme.muted }}>
+              As Glow Curling grew into a regional tradition, the Stonewall Teulon Tribune documented each chapter.
+            </p>
+          </div>
+
+          {/* Desktop alternating timeline */}
+          <div className="hidden lg:block relative">
+            <div className={`absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 ${tr}`}
+              style={{ background: glow
+                ? 'linear-gradient(to bottom,transparent,rgba(255,0,170,0.4) 10%,rgba(255,0,170,0.4) 90%,transparent)'
+                : 'linear-gradient(to bottom,transparent,#e7dac4 10%,#e7dac4 90%,transparent)' }} />
+            <div className="space-y-20">
+              {newsArticles.map((article, i) => {
+                const cardLeft = i % 2 === 0
+                const delay = i * 180
+                return (
+                  <div key={i} className="relative flex items-center gap-0"
+                    style={{ opacity: newsVisible ? 1 : 0, transform: newsVisible ? 'none' : 'translateY(28px)', transition: `opacity 600ms ${delay}ms ease-out,transform 600ms ${delay}ms ease-out` }}>
+                    {/* Left slot */}
+                    <div className="flex flex-1 justify-end pr-10">
+                      {cardLeft ? (
+                        <button onClick={() => setNewsLightboxIdx(i)}
+                          className="group max-w-sm w-full overflow-hidden rounded-xl text-left transition-all duration-300 hover:-translate-y-1"
+                          style={{ background: '#fffdf7', boxShadow: theme.newsGlow, border: glow ? '1px solid rgba(255,0,170,0.25)' : '1px solid #e8e0d0' }}
+                          aria-label={`View article: ${article.headline}`}>
+                          <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
+                          <div className="px-4 py-3">
+                            <p className="text-xs font-semibold text-[#7A1F2B]">{article.publication}</p>
+                            <p className="text-xs text-[#3D3D3D]/60">{article.date}</p>
+                          </div>
+                        </button>
+                      ) : (
+                        <div className="max-w-sm w-full text-right pr-2">
+                          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>{article.year}</p>
+                          <h3 className={`mt-2 font-display text-2xl leading-snug ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{article.headline}</h3>
+                          <p className="mt-1 text-xs" style={{ color: theme.muted }}>{article.publication} · {article.date}</p>
+                          <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.muted }}>{article.summary}</p>
+                          <button onClick={() => setNewsLightboxIdx(i)}
+                            className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
+                            style={{ color: theme.accent }}>
+                            View article <ArrowRight className="h-3 w-3" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                    {/* Centre dot */}
+                    <div className="shrink-0 flex flex-col items-center z-10">
+                      <div className={`h-4 w-4 rounded-full border-2 ${tr}`}
+                        style={{ background: theme.cardBg, borderColor: theme.timelineDot, boxShadow: theme.dotGlow }} />
+                    </div>
+                    {/* Right slot */}
+                    <div className="flex flex-1 pl-10">
+                      {!cardLeft ? (
+                        <button onClick={() => setNewsLightboxIdx(i)}
+                          className="group max-w-sm w-full overflow-hidden rounded-xl text-left transition-all duration-300 hover:-translate-y-1"
+                          style={{ background: '#fffdf7', boxShadow: theme.newsGlow, border: glow ? '1px solid rgba(255,0,170,0.25)' : '1px solid #e8e0d0' }}
+                          aria-label={`View article: ${article.headline}`}>
+                          <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
+                          <div className="px-4 py-3">
+                            <p className="text-xs font-semibold text-[#7A1F2B]">{article.publication}</p>
+                            <p className="text-xs text-[#3D3D3D]/60">{article.date}</p>
+                          </div>
+                        </button>
+                      ) : (
+                        <div className="max-w-sm w-full pl-2">
+                          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>{article.year}</p>
+                          <h3 className={`mt-2 font-display text-2xl leading-snug ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{article.headline}</h3>
+                          <p className="mt-1 text-xs" style={{ color: theme.muted }}>{article.publication} · {article.date}</p>
+                          <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.muted }}>{article.summary}</p>
+                          <button onClick={() => setNewsLightboxIdx(i)}
+                            className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
+                            style={{ color: theme.accent }}>
+                            View article <ArrowRight className="h-3 w-3" />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )
+              })}
+
+              {/* 2026 and Beyond */}
+              <div className="relative flex items-center gap-0"
+                style={{ opacity: newsVisible ? 1 : 0, transform: newsVisible ? 'none' : 'translateY(28px)', transition: `opacity 600ms ${newsArticles.length * 180}ms ease-out,transform 600ms ${newsArticles.length * 180}ms ease-out` }}>
+                <div className="flex flex-1 justify-end pr-10" />
+                <div className="shrink-0 flex flex-col items-center z-10">
+                  <div className="h-4 w-4 rounded-full border-2 border-dashed" style={{ borderColor: theme.accent, background: theme.altBg }} />
+                </div>
+                <div className="flex flex-1 pl-10">
+                  <div className="max-w-sm">
+                    <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>2026 and Beyond</p>
+                    <h3 className={`mt-2 font-display text-2xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>The Story Continues</h3>
+                    <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.muted }}>Every season brings new ideas, new costumes, new volunteers, and new memories. Maybe the next headline will be about your team.</p>
+                    <p className="mt-3 text-sm font-semibold italic" style={{ color: theme.accent, textShadow: theme.accentGlow }}>See you under the black lights.</p>
+                    <Link to="/contact" className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70" style={{ color: theme.accent }}>
+                      Get involved <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile vertical timeline */}
+          <div className="lg:hidden space-y-10">
+            {newsArticles.map((article, i) => {
+              const delay = i * 150
+              return (
+                <div key={i} className="flex gap-4"
+                  style={{ opacity: newsVisible ? 1 : 0, transform: newsVisible ? 'none' : 'translateY(20px)', transition: `opacity 500ms ${delay}ms ease-out,transform 500ms ${delay}ms ease-out` }}>
+                  <div className="flex flex-col items-center shrink-0">
+                    <div className="h-4 w-4 rounded-full border-2 mt-1" style={{ background: theme.cardBg, borderColor: theme.timelineDot, boxShadow: theme.dotGlow }} />
+                    {i < newsArticles.length - 1 && <div className="mt-1 w-px flex-1" style={{ background: theme.timelineLine, minHeight: '1.5rem' }} />}
+                  </div>
+                  <div className="pb-4 flex-1 min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent }}>{article.year}</p>
+                    <h3 className={`mt-1 font-display text-xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{article.headline}</h3>
+                    <p className="mt-1 text-xs" style={{ color: theme.muted }}>{article.date}</p>
+                    <p className="mt-2 text-sm leading-relaxed" style={{ color: theme.muted }}>{article.summary}</p>
+                    <button onClick={() => setNewsLightboxIdx(i)}
+                      className="mt-4 w-full overflow-hidden rounded-xl text-left transition-all duration-200 hover:opacity-90 active:scale-[0.99]"
+                      style={{ background: '#fffdf7', boxShadow: theme.newsGlow, border: glow ? '1px solid rgba(255,0,170,0.25)' : '1px solid #e8e0d0' }}
+                      aria-label={`View article: ${article.headline}`}>
+                      <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
+            {/* 2026 mobile */}
+            <div className="flex gap-4"
+              style={{ opacity: newsVisible ? 1 : 0, transition: `opacity 500ms ${newsArticles.length * 150}ms ease-out` }}>
+              <div className="flex flex-col items-center shrink-0 mt-1">
+                <div className="h-4 w-4 rounded-full border-2 border-dashed" style={{ borderColor: theme.accent, background: theme.altBg }} />
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent }}>2026 and Beyond</p>
+                <h3 className={`mt-1 font-display text-xl ${tr}`} style={{ color: theme.heading }}>The Story Continues</h3>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: theme.muted }}>Every season brings new ideas, new costumes, new volunteers, and new memories.</p>
+                <p className="mt-2 text-sm font-semibold italic" style={{ color: theme.accent }}>See you under the black lights.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* More Than Just the Lights */}
+      <section className={`container-page py-24 ${tr}`}>
+        <div className="mx-auto max-w-3xl">
+          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>What It Really Is</p>
+          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>More Than Just the Lights</h2>
+          <p className={`mt-8 text-base leading-relaxed ${tr}`} style={{ color: theme.muted }}>Glow Curling is about much more than black lights and glowing rocks.</p>
+          <div className="mt-6 space-y-4">
+            {closingLines.map((line, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${tr}`} style={{ background: theme.accent, boxShadow: theme.accentGlow }} />
+                <p className={`text-base leading-relaxed ${tr}`} style={{ color: theme.text }}>{line}</p>
+              </div>
+            ))}
+          </div>
+          <blockquote className={`mt-12 border-l-4 py-2 pl-6 font-display text-2xl italic ${tr}`}
+            style={{ borderColor: theme.accent, color: theme.heading, textShadow: theme.headingGlow }}>
+            Every season the lights go out. And the Argyle Curling Club shines a little brighter.
+          </blockquote>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className={`py-20 ${tr}`} style={{ background: theme.altBg }}>
+      <section className={`py-20 lg:py-24 ${tr}`} style={{ background: theme.altBg }}>
         <div className="container-page">
           <div className="mx-auto max-w-2xl">
             <div className="mb-12 text-center">
-              <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${tr}`} style={{ color: theme.accent }}>Questions</p>
-              <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>
-                Frequently Asked
-              </h2>
+              <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Good to Know</p>
+              <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>Frequently Asked</h2>
             </div>
             <div className="space-y-3">
               {faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className={`overflow-hidden rounded-xl border ${tr}`}
-                  style={{ background: theme.cardBg, borderColor: theme.cardBorder }}
-                >
-                  <button
-                    className={`flex w-full items-center justify-between px-6 py-4 text-left text-sm font-semibold ${tr}`}
+                <div key={i} className={`overflow-hidden rounded-xl border ${tr}`}
+                  style={{ background: theme.cardBg, borderColor: theme.cardBorder }}>
+                  <button className={`flex w-full items-center justify-between px-6 py-4 text-left text-sm font-semibold ${tr}`}
                     style={{ color: theme.heading }}
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  >
+                    aria-expanded={openFaq === i}>
                     <span>{faq.q}</span>
-                    <span
-                      className="ml-4 shrink-0 text-xl transition-transform duration-300"
-                      style={{ color: theme.accent, transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)', display: 'inline-block' }}
-                    >+</span>
+                    <span className="ml-4 shrink-0 text-xl"
+                      style={{ color: theme.accent, display: 'inline-block', transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 300ms', filter: glow ? 'drop-shadow(0 0 4px rgba(255,238,0,0.5))' : 'none' }}>+</span>
                   </button>
-                  <div
-                    className="overflow-hidden transition-all duration-300"
-                    style={{ maxHeight: openFaq === i ? '200px' : '0px' }}
-                  >
+                  <div className="overflow-hidden transition-all duration-300" style={{ maxHeight: openFaq === i ? '240px' : '0px' }}>
                     <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: theme.muted }}>{faq.a}</p>
                   </div>
                 </div>
@@ -325,81 +655,83 @@ export function GlowPage() {
       </section>
 
       {/* CTA */}
-      <section
-        className={`relative overflow-hidden py-28 ${tr}`}
-        style={{ background: glow ? '#0a0020' : '#7A1F2B' }}
-      >
-        {glow && (
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at center, rgba(255,0,170,0.18) 0%, transparent 65%)' }}
-          />
-        )}
+      <section className={`relative overflow-hidden py-28 ${tr}`} style={{ background: glow ? '#08001a' : '#7A1F2B' }}>
+        {glow && <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse at 50% 60%,rgba(255,0,170,0.16) 0%,transparent 65%)' }} />}
         <div className="container-page relative text-center">
-          <h2
-            className={`font-display text-4xl text-white sm:text-5xl ${tr}`}
-            style={{ textShadow: glow ? '0 0 24px rgba(255,0,170,0.6), 0 0 48px rgba(255,0,170,0.3)' : 'none' }}
-          >
+          <h2 className={`font-display text-4xl text-white sm:text-5xl ${tr}`}
+            style={{ textShadow: glow ? '0 0 24px rgba(255,0,170,0.55),0 0 50px rgba(255,0,170,0.25)' : 'none' }}>
             Ready to Try Glow Curling?
           </h2>
-          <p className="mt-4 text-lg text-white/75">Join us for the next Mixed Glow Bonspiel at the Argyle Curling Club.</p>
-          <Link
-            to="/contact"
-            className={`mt-10 inline-flex items-center rounded-full px-8 py-4 text-sm font-semibold ${tr}`}
-            style={{
-              background: glow ? '#ff00aa' : '#C8A24A',
-              color: glow ? '#000000' : '#5A1620',
-              boxShadow: glow ? '0 0 28px rgba(255,0,170,0.55)' : 'none',
-            }}
-          >
-            Register for the Next Glow Bonspiel
-          </Link>
+          <p className="mt-4 text-lg text-white/75">Join us for the next Glow event at the Argyle Curling Club.</p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link to="/contact" className={`inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-semibold ${tr}`}
+              style={{ background: glow ? '#ff00aa' : '#C8A24A', color: glow ? '#000' : '#5A1620', boxShadow: glow ? '0 0 28px rgba(255,0,170,0.5)' : 'none' }}>
+              Get in Touch <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/bonspiels"
+              className={`inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm hover:border-white/50 ${tr}`}>
+              View Bonspiels
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Lightbox */}
+      {/* Gallery Lightbox */}
       {lightboxIdx !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md"
-          onClick={() => setLightboxIdx(null)}
-          role="dialog"
-          aria-modal="true"
-        >
-          <button
-            className="absolute right-4 top-4 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20"
-            onClick={() => setLightboxIdx(null)}
-            aria-label="Close"
-          >
-            <X className="h-5 w-5" />
-          </button>
-          <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 disabled:opacity-20"
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 backdrop-blur-md"
+          onClick={() => setLightboxIdx(null)} role="dialog" aria-modal="true" aria-label="Photo gallery">
+          <button className="absolute right-4 top-4 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20"
+            onClick={() => setLightboxIdx(null)} aria-label="Close"><X className="h-5 w-5" /></button>
+          <button className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 disabled:opacity-20"
             onClick={e => { e.stopPropagation(); setLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null) }}
-            disabled={lightboxIdx === 0}
-            aria-label="Previous photo"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
+            disabled={lightboxIdx === 0} aria-label="Previous photo"><ChevronLeft className="h-5 w-5" /></button>
           <div className="max-w-4xl px-16" onClick={e => e.stopPropagation()}>
-            <img
-              src={galleryImages[lightboxIdx].src}
-              alt={galleryImages[lightboxIdx].caption}
+            <img src={galleryImages[lightboxIdx].src} alt={galleryImages[lightboxIdx].caption}
               className="max-h-[80vh] rounded-xl object-contain"
-              style={{ boxShadow: glow ? '0 0 40px rgba(255,0,170,0.3)' : '0 8px 32px rgba(0,0,0,0.5)' }}
-            />
+              style={{ boxShadow: glow ? '0 0 40px rgba(255,0,170,0.25),0 8px 32px rgba(0,0,0,0.6)' : '0 8px 32px rgba(0,0,0,0.5)' }} />
             <p className="mt-3 text-center text-sm text-white/60">{galleryImages[lightboxIdx].caption}</p>
             <p className="mt-1 text-center text-xs text-white/30">{lightboxIdx + 1} / {galleryImages.length}</p>
           </div>
-          <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 disabled:opacity-20"
+          <button className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 disabled:opacity-20"
             onClick={e => { e.stopPropagation(); setLightboxIdx(i => i !== null ? Math.min(i + 1, galleryImages.length - 1) : null) }}
-            disabled={lightboxIdx === galleryImages.length - 1}
-            aria-label="Next photo"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+            disabled={lightboxIdx === galleryImages.length - 1} aria-label="Next photo"><ChevronRight className="h-5 w-5" /></button>
         </div>
       )}
+
+      {/* News Lightbox */}
+      {newsLightboxIdx !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/92 backdrop-blur-md"
+          onClick={() => setNewsLightboxIdx(null)} role="dialog" aria-modal="true" aria-label="Newspaper article"
+          onTouchStart={e => { touchStartX.current = e.touches[0].clientX }}
+          onTouchEnd={e => {
+            const diff = touchStartX.current - e.changedTouches[0].clientX
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) setNewsLightboxIdx(i => i !== null ? Math.min(i + 1, newsArticles.length - 1) : null)
+              else setNewsLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null)
+            }
+          }}>
+          <button className="absolute right-4 top-4 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20"
+            onClick={() => setNewsLightboxIdx(null)} aria-label="Close"><X className="h-5 w-5" /></button>
+          <button className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 disabled:opacity-20"
+            onClick={e => { e.stopPropagation(); setNewsLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null) }}
+            disabled={newsLightboxIdx === 0} aria-label="Previous article"><ChevronLeft className="h-5 w-5" /></button>
+          <div className="max-w-3xl w-full px-16" onClick={e => e.stopPropagation()}>
+            <div className="overflow-hidden rounded-xl" style={{ background: '#fffdf7', boxShadow: glow ? '0 0 0 1px rgba(255,0,170,0.4),0 0 40px rgba(255,0,170,0.15),0 16px 48px rgba(0,0,0,0.6)' : '0 16px 48px rgba(0,0,0,0.5)' }}>
+              <img src={newsArticles[newsLightboxIdx].src} alt={newsArticles[newsLightboxIdx].alt}
+                className="w-full object-contain" />
+            </div>
+            <div className="mt-4 text-center">
+              <p className="text-sm font-semibold text-white/80">{newsArticles[newsLightboxIdx].headline}</p>
+              <p className="mt-1 text-xs text-white/40">{newsArticles[newsLightboxIdx].publication} · {newsArticles[newsLightboxIdx].date}</p>
+              <p className="mt-1 text-xs text-white/30">{newsLightboxIdx + 1} / {newsArticles.length}</p>
+            </div>
+          </div>
+          <button className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 disabled:opacity-20"
+            onClick={e => { e.stopPropagation(); setNewsLightboxIdx(i => i !== null ? Math.min(i + 1, newsArticles.length - 1) : null) }}
+            disabled={newsLightboxIdx === newsArticles.length - 1} aria-label="Next article"><ChevronRight className="h-5 w-5" /></button>
+        </div>
+      )}
+
     </div>
   )
 }
