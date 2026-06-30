@@ -186,7 +186,7 @@ const closingLines = [
 ]
 
 const faqs = [
-  { q: 'What should I wear?',             a: 'Bright fluorescent colours produce the best effect under black lights. High-visibility safety clothing and true neon colours glow brilliantly. White appears brighter than normal but does not glow like fluorescent materials. The brighter the colour, the better the effect.' },
+  { q: 'What should I wear?',             a: 'Black lights react best to hi-vis safety clothing, bright fluorescent colours, glow-in-the-dark materials, and battery-powered LED accessories. White looks brighter than usual but does not glow the same way fluorescent materials do. The more neon, the better.' },
   { q: 'Do I need curling experience?',    a: 'Not at all. Glow Curling is designed for everyone, from experienced curlers to complete beginners. The atmosphere is welcoming at all skill levels.' },
   { q: 'Is equipment provided?',           a: 'Yes. We can provide sliders and brooms. Clean running shoes are all you need on your feet.' },
   { q: 'Can I wear a costume?',            a: 'Absolutely. Creative costumes have become one of the highlights of Glow Curling. Many teams coordinate their outfits and costume prizes are often awarded throughout the evening.' },
