@@ -18,6 +18,9 @@ import news2021 from '../assets/images/glow/dec 2021 glow.png'
 import news2023 from '../assets/images/glow/2023 glow.png'
 import news2024 from '../assets/images/glow/2nd ladies.png'
 import news2025 from '../assets/images/glow/3rd ladies.png'
+import newsGlowThrow from '../assets/images/glow/feb202025 tribune.png'
+import newsLadies2026 from '../assets/images/glow/ladies 2026.png'
+import newsMixed2026 from '../assets/images/glow/mixed2026.png'
 
 const galleryImages = [
   { src: g1,  caption: 'The Rock Bottoms — costumes are part of the tradition' },
@@ -34,6 +37,7 @@ const galleryImages = [
 interface NewsArticle {
   year: string
   headline: string
+  articleTitle: string
   publication: string
   date: string
   summary: string
@@ -44,39 +48,73 @@ interface NewsArticle {
 const newsArticles: NewsArticle[] = [
   {
     year: 'December 2021',
-    headline: 'Glow Curling Begins',
+    headline: 'The Lights Go On',
+    articleTitle: 'Argyle Curling Club Offers Glow Curling and Bonspiels',
     publication: 'Stonewall Teulon Tribune',
     date: 'December 23, 2021',
-    summary: 'Glow Curling is introduced at the Argyle Curling Club, beginning with Friday League curlers before expanding into birthday parties, Christmas parties and community events.',
+    summary: 'Glow Curling debuts as an exciting new way to experience the sport. Originally introduced for Friday League curlers, it quickly expands to birthday parties, Christmas parties and community rentals, proving there is enthusiasm for a new kind of curling experience.',
     src: news2021,
     alt: 'Stonewall Teulon Tribune, December 23 2021: Argyle Curling Club offers glow curling, bonspiels',
   },
   {
     year: 'February 2023',
-    headline: 'The First Glow Bonspiel Returns',
+    headline: 'Bigger Than Before',
+    articleTitle: 'Argyle Glow Bonspiel to Light Up the Rink',
     publication: 'Stonewall Teulon Tribune',
     date: 'February 2, 2023',
-    summary: 'Following a winter storm that postponed the inaugural event, volunteers return with an even bigger Glow Bonspiel featuring additional lighting, glowing rocks, decorations and music.',
+    summary: 'After a winter storm postponed the inaugural Glow Bonspiel, volunteers return with an even bigger vision featuring additional lighting, glowing rocks, music, decorations and themed prizes.',
     src: news2023,
     alt: 'Stonewall Teulon Tribune, February 2 2023: Argyle Glow Bonspiel to light up the rink',
   },
   {
     year: 'February 2024',
-    headline: 'Glow Continues to Grow',
+    headline: 'Glow Becomes a Tradition',
+    articleTitle: 'Glowing Reviews for Argyle Ladies Bonspiel',
     publication: 'Stonewall Teulon Tribune',
     date: 'February 8, 2024',
-    summary: 'The Ladies Glow Bonspiel expands the tradition as teams travel from communities across Manitoba. Creative costumes, music and community become defining parts of the experience.',
+    summary: 'The Ladies Bonspiel embraces the Glow theme, welcoming teams from across Manitoba. Costumes, music and community become just as important as the curling itself.',
     src: news2024,
     alt: 'Stonewall Teulon Tribune, February 8 2024: Glowing reviews for Argyle ladies bonspiel',
   },
   {
     year: 'February 2025',
-    headline: 'A Full Community Experience',
+    headline: 'Glow Keeps Growing',
+    articleTitle: 'Third Annual Argyle Ladies Bonspiel a Glowing Success',
     publication: 'Stonewall Teulon Tribune',
     date: 'February 13, 2025',
-    summary: 'With approximately 20 teams, themed activities, dancing, glow games and elaborate costumes, Glow Curling has evolved into much more than a traditional bonspiel.',
+    summary: 'With approximately 20 teams, Glow Curling evolves into a full event experience featuring music, dancing, glow games, clubhouse activities and unforgettable costumes.',
     src: news2025,
     alt: 'Stonewall Teulon Tribune, February 13 2025: Third annual Argyle Ladies Bonspiel a glowing success',
+  },
+  {
+    year: 'February 2025',
+    headline: 'Something for Everyone',
+    articleTitle: "Argyle's Glow and Throw Bonspiel: A Family-Friendly Event",
+    publication: 'Stonewall Teulon Tribune',
+    date: 'February 2025',
+    summary: 'The Open Glow and Throw Bonspiel welcomes 18 teams and reinforces that Glow Curling is for everyone — from experienced curlers to families and first-time participants. Creative costumes, community spirit and friendly competition continue to define the weekend.',
+    src: newsGlowThrow,
+    alt: "Stonewall Teulon Tribune: Argyle's glow and throw bonspiel, a family-friendly event",
+  },
+  {
+    year: 'February 2026',
+    headline: 'Grannies Glow Wild!',
+    articleTitle: 'Grannies Glow Wild at Argyle Bonspiel',
+    publication: 'Stonewall Teulon Tribune',
+    date: 'February 12, 2026',
+    summary: 'The sold-out Ladies Glow Bonspiel returns with another imaginative theme, twenty teams and incredible creativity. Returning participants and new teams alike help continue one of the most anticipated events on the club calendar.',
+    src: newsLadies2026,
+    alt: 'Stonewall Teulon Tribune, February 12 2026: Grannies glow wild at Argyle bonspiel',
+  },
+  {
+    year: 'February 2026',
+    headline: 'Lighting Up Another Weekend',
+    articleTitle: 'Glow Bonspiel Lights Up Argyle Weekend',
+    publication: 'Stonewall Teulon Tribune',
+    date: 'February 2026',
+    summary: 'The Mixed Glow Bonspiel welcomes eighteen teams, including many travelling from outside the Interlake. Creative costumes, returning competitors and another successful weekend demonstrate how Glow Curling has become a signature event on the club calendar.',
+    src: newsMixed2026,
+    alt: 'Stonewall Teulon Tribune: Glow Bonspiel lights up Argyle weekend',
   },
 ]
 
@@ -455,10 +493,10 @@ export function GlowPage() {
       <section ref={newsRef} className={`py-20 lg:py-28 ${tr}`} style={{ background: theme.altBg }}>
         <div className="container-page">
           <div className="mx-auto mb-16 max-w-xl text-center">
-            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Press Coverage</p>
-            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>In the News</h2>
-            <p className={`mt-3 text-sm leading-relaxed ${tr}`} style={{ color: theme.muted }}>
-              As Glow Curling grew into a regional tradition, the Stonewall Teulon Tribune documented each chapter.
+            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>In the News</p>
+            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>A Tradition in the Making</h2>
+            <p className={`mt-4 text-sm leading-relaxed max-w-2xl mx-auto ${tr}`} style={{ color: theme.muted }}>
+              Since 2021, the Stonewall Teulon Tribune has documented the evolution of Glow Curling at the Argyle Curling Club. What began as an experiment has grown into a collection of signature events that attract participants from across Manitoba. Explore the journey through the stories that helped tell it.
             </p>
           </div>
 
@@ -484,8 +522,8 @@ export function GlowPage() {
                           aria-label={`View article: ${article.headline}`}>
                           <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
                           <div className="px-4 py-3">
-                            <p className="text-xs font-semibold text-[#7A1F2B]">{article.publication}</p>
-                            <p className="text-xs text-[#3D3D3D]/60">{article.date}</p>
+                            <p className="text-xs font-semibold text-[#7A1F2B]">{article.articleTitle}</p>
+                            <p className="text-xs text-[#3D3D3D]/50">{article.publication} · {article.date}</p>
                           </div>
                         </button>
                       ) : (
@@ -516,8 +554,8 @@ export function GlowPage() {
                           aria-label={`View article: ${article.headline}`}>
                           <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
                           <div className="px-4 py-3">
-                            <p className="text-xs font-semibold text-[#7A1F2B]">{article.publication}</p>
-                            <p className="text-xs text-[#3D3D3D]/60">{article.date}</p>
+                            <p className="text-xs font-semibold text-[#7A1F2B]">{article.articleTitle}</p>
+                            <p className="text-xs text-[#3D3D3D]/50">{article.publication} · {article.date}</p>
                           </div>
                         </button>
                       ) : (
@@ -538,7 +576,7 @@ export function GlowPage() {
                 )
               })}
 
-              {/* 2026 and Beyond */}
+              {/* The Next Chapter */}
               <div className="relative flex items-center gap-0"
                 style={{ opacity: newsVisible ? 1 : 0, transform: newsVisible ? 'none' : 'translateY(28px)', transition: `opacity 600ms ${newsArticles.length * 180}ms ease-out,transform 600ms ${newsArticles.length * 180}ms ease-out` }}>
                 <div className="flex flex-1 justify-end pr-10" />
@@ -547,12 +585,22 @@ export function GlowPage() {
                 </div>
                 <div className="flex flex-1 pl-10">
                   <div className="max-w-sm">
-                    <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>2026 and Beyond</p>
-                    <h3 className={`mt-2 font-display text-2xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>The Story Continues</h3>
-                    <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.muted }}>Every season brings new ideas, new costumes, new volunteers, and new memories. Maybe the next headline will be about your team.</p>
-                    <p className="mt-3 text-sm font-semibold italic" style={{ color: theme.accent, textShadow: theme.accentGlow }}>See you under the black lights.</p>
-                    <Link to="/contact" className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70" style={{ color: theme.accent }}>
-                      Get involved <ArrowRight className="h-3 w-3" />
+                    <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>What Comes Next</p>
+                    <h3 className={`mt-2 font-display text-2xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>The Next Chapter</h3>
+                    <p className="mt-3 text-sm leading-relaxed" style={{ color: theme.muted }}>Every year brings:</p>
+                    <ul className="mt-2 space-y-1">
+                      {['New costumes','New themes','New volunteers','New friendships','New memories'].map(item => (
+                        <li key={item} className="flex items-center gap-2 text-sm" style={{ color: theme.muted }}>
+                          <span className="h-1 w-1 shrink-0 rounded-full" style={{ background: theme.accent }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-sm leading-relaxed" style={{ color: theme.muted }}>The next headline has not been written yet.</p>
+                    <p className="mt-1 text-sm font-semibold italic" style={{ color: theme.heading, textShadow: theme.headingGlow }}>Maybe it will feature your team.</p>
+                    <Link to="/contact" className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold transition-opacity hover:opacity-80"
+                      style={{ background: glow ? 'rgba(255,0,170,0.12)' : 'rgba(122,31,43,0.08)', border: `1px solid ${theme.cardBorder}`, color: theme.heading }}>
+                      Join us for the next Glow Bonspiel <ArrowRight className="h-3 w-3" />
                     </Link>
                   </div>
                 </div>
@@ -586,17 +634,28 @@ export function GlowPage() {
                 </div>
               )
             })}
-            {/* 2026 mobile */}
+            {/* The Next Chapter mobile */}
             <div className="flex gap-4"
               style={{ opacity: newsVisible ? 1 : 0, transition: `opacity 500ms ${newsArticles.length * 150}ms ease-out` }}>
               <div className="flex flex-col items-center shrink-0 mt-1">
                 <div className="h-4 w-4 rounded-full border-2 border-dashed" style={{ borderColor: theme.accent, background: theme.altBg }} />
               </div>
               <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent }}>2026 and Beyond</p>
-                <h3 className={`mt-1 font-display text-xl ${tr}`} style={{ color: theme.heading }}>The Story Continues</h3>
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: theme.muted }}>Every season brings new ideas, new costumes, new volunteers, and new memories.</p>
-                <p className="mt-2 text-sm font-semibold italic" style={{ color: theme.accent }}>See you under the black lights.</p>
+                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent }}>What Comes Next</p>
+                <h3 className={`mt-1 font-display text-xl ${tr}`} style={{ color: theme.heading }}>The Next Chapter</h3>
+                <ul className="mt-2 space-y-1">
+                  {['New costumes','New themes','New volunteers','New friendships','New memories'].map(item => (
+                    <li key={item} className="flex items-center gap-2 text-sm" style={{ color: theme.muted }}>
+                      <span className="h-1 w-1 shrink-0 rounded-full" style={{ background: theme.accent }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-sm" style={{ color: theme.muted }}>The next headline has not been written yet.</p>
+                <p className="mt-1 text-sm font-semibold italic" style={{ color: theme.heading }}>Maybe it will feature your team.</p>
+                <Link to="/contact" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold" style={{ color: theme.accent }}>
+                  Join us <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             </div>
           </div>
@@ -721,7 +780,7 @@ export function GlowPage() {
                 className="w-full object-contain" />
             </div>
             <div className="mt-4 text-center">
-              <p className="text-sm font-semibold text-white/80">{newsArticles[newsLightboxIdx].headline}</p>
+              <p className="text-sm font-semibold text-white/80">{newsArticles[newsLightboxIdx].articleTitle}</p>
               <p className="mt-1 text-xs text-white/40">{newsArticles[newsLightboxIdx].publication} · {newsArticles[newsLightboxIdx].date}</p>
               <p className="mt-1 text-xs text-white/30">{newsLightboxIdx + 1} / {newsArticles.length}</p>
             </div>
