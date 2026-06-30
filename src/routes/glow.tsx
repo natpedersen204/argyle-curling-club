@@ -127,66 +127,8 @@ const features = [
   { Icon: Trophy,   title: 'Friendly Competition',    description: 'There are games to win and prizes to earn. But the real prize is the stories you leave with.' },
 ]
 
-const milestones = [
-  { year: 'Dec 2021', title: 'The First Glow Night',       description: 'Introduced during Friday League play. The response was immediate. Birthday parties and community rentals followed quickly.' },
-  { year: '2022',     title: 'Planning the First Bonspiel', description: 'Volunteers planned the first Glow Bonspiel. A winter storm forced a postponement. The team kept refining it.' },
-  { year: '2023',     title: 'The Return',                  description: 'Glow Curling returned with more lighting, glowing rocks, music, decorations, glow paint, and themed prizes.' },
-  { year: '2024',     title: 'A Destination Event',         description: 'The Ladies Bonspiel adopted the Glow theme. Teams arrived from nine communities across Manitoba.' },
-  { year: '2025',     title: 'A Full Evening',              description: 'Around 20 teams. Costumes, dancing, a glow scavenger hunt, bean bag toss, and a fully decorated clubhouse.' },
-]
-
-const chapters = [
-  {
-    label: 'Every Great Tradition Starts Somewhere',
-    year: 'December 2021',
-    paragraphs: [
-      'Someone turned off the overhead lights and switched on the black lights. The ice glowed. The rocks glowed. The people glowed. Nobody wanted it to stop.',
-      'What began as a simple experiment during Friday League play found an audience almost immediately. Word spread. Birthday parties booked the rink. Christmas gatherings wanted the full experience. The community had discovered something new about curling, and they kept coming back.',
-    ],
-    quote: null as string | null,
-  },
-  {
-    label: 'Growing Something Special',
-    year: '2022 and 2023',
-    paragraphs: [
-      'In 2022, the club set out to host its first Glow Bonspiel. A major winter storm had other plans. Rather than simply cancel and move on, the volunteers kept working — more lighting, better decorations, glowing rocks, glow paint for the house.',
-      'When 2023 arrived, Glow Curling returned bigger than before. Music filled the rink. Teams arrived in creative costumes. Themed prizes were awarded. The atmosphere had become just as important as the curling itself.',
-    ],
-    quote: 'Nobody knew exactly what to expect. By the third end, nobody wanted it to stop.' as string | null,
-  },
-  {
-    label: 'A Manitoba Tradition',
-    year: '2024',
-    paragraphs: [
-      'The reach of Glow Curling grew well beyond Argyle. When the Ladies Bonspiel adopted the Glow theme, teams arrived from communities across the region — Warren, Stonewall, Teulon, Balmoral, Carman, Lac du Bonnet, Steinbach, and Winnipeg among them.',
-      'Glow Curling had become a destination event. People were planning weeks in advance. The Stonewall Teulon Tribune took notice.',
-    ],
-    quote: null as string | null,
-  },
-  {
-    label: 'More Than Just the Lights',
-    year: '2025',
-    paragraphs: [
-      'Around 20 teams participated in 2025 — one of the largest turnouts yet. Teams coordinated costumes. A glow scavenger hunt wound through a fully decorated clubhouse. Music, dancing, bean bag toss, food, and prizes filled the evening.',
-      'What started as an idea to flip off the lights had grown into something the club could not have planned for. A small community found a way to make winter feel electric.',
-    ],
-    quote: null as string | null,
-  },
-]
-
-const experiencePills = ['Curling', 'Live Music', 'Creative Costumes', 'Food and Drinks', 'Themed Games', 'Prizes', 'Community']
-
-const closingLines = [
-  'Friends planning costumes weeks in advance.',
-  'Volunteers transforming the rink after everyone else has gone home.',
-  'First-time curlers discovering a sport they never expected to love.',
-  'Music filling the clubhouse.',
-  'Laughter between ends.',
-  'A small community creating an experience that people return for year after year.',
-]
-
 const faqs = [
-  { q: 'What should I wear?',             a: 'Black lights react best to hi-vis safety clothing, bright fluorescent colours, glow-in-the-dark materials, and battery-powered LED accessories. White looks brighter than usual but does not glow the same way fluorescent materials do. The more neon, the better.' },
+  { q: 'What should I wear?',             a: 'White clothing does not glow particularly well under black lights. Neon, fluorescent, and high-visibility colours create the brightest glow effect.' },
   { q: 'Do I need curling experience?',    a: 'Not at all. Glow Curling is designed for everyone, from experienced curlers to complete beginners. The atmosphere is welcoming at all skill levels.' },
   { q: 'Is equipment provided?',           a: 'Curlers should bring their own brooms and sliders. Clean shoes must be worn on all ice surfaces.' },
   { q: 'Can I wear a costume?',            a: 'Absolutely. Creative costumes have become one of the highlights of Glow Curling. Many teams coordinate their outfits and costume prizes are often awarded throughout the evening.' },
@@ -308,8 +250,11 @@ export function GlowPage() {
               style={{ textShadow: glow ? '0 0 28px rgba(255,0,170,0.55),0 0 60px rgba(255,0,170,0.25)' : 'none' }}>
               Experience Glow Curling
             </h1>
-            <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/80">
-              When the lights go out, the fun begins. One of Manitoba's most unique curling experiences, right here in Argyle.
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80">
+              Trade your white sweaters for neon and experience one of Manitoba's most unique curling events. Under black lights, glowing rocks, illuminated house rings, and vibrant decorations transform the rink into an unforgettable weekend of curling, costumes, music, and laughs.
+            </p>
+            <p className="mt-4 max-w-xl text-sm text-white/55">
+              Tip: White clothing doesn't glow well under black lights. Neon, fluorescent, and high-visibility colours create the brightest glow.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <button onClick={toggle}
@@ -322,92 +267,6 @@ export function GlowPage() {
                 View All Bonspiels
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Story */}
-      <section className={`container-page py-24 lg:py-32 ${tr}`}>
-        <div className="mx-auto max-w-3xl">
-          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Our Story</p>
-          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>How Glow Curling Began</h2>
-          {chapters.map((ch, i) => (
-            <div key={i} className="mt-16">
-              <div className="flex items-center gap-4 mb-5">
-                <span className="h-px flex-1" style={{ background: theme.divider }} />
-                <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: theme.accent, textShadow: theme.accentGlow }}>{ch.year}</span>
-                <span className="h-px flex-1" style={{ background: theme.divider }} />
-              </div>
-              <h3 className={`font-display text-2xl sm:text-3xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{ch.label}</h3>
-              <div className={`mt-5 space-y-4 text-base leading-relaxed ${tr}`} style={{ color: theme.muted }}>
-                {ch.paragraphs.map((p, j) => <p key={j}>{p}</p>)}
-              </div>
-              {ch.quote && (
-                <blockquote className={`my-8 border-l-4 py-2 pl-6 font-display text-xl italic ${tr}`}
-                  style={{ borderColor: theme.accent, color: theme.heading, textShadow: theme.headingGlow }}>
-                  {ch.quote}
-                </blockquote>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Milestones */}
-      <section className={`py-20 lg:py-24 ${tr}`} style={{ background: theme.altBg }}>
-        <div className="container-page">
-          <div className="mb-14 text-center">
-            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Milestones</p>
-            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>Five Seasons in the Making</h2>
-          </div>
-          <div className="hidden lg:block relative">
-            <div className="absolute top-[18px] left-[calc(10%+20px)] right-[calc(10%+20px)] h-px" style={{ background: theme.timelineLine }} />
-            <div className="grid grid-cols-5">
-              {milestones.map((m, i) => (
-                <div key={i} className="flex flex-col items-center px-3 text-center">
-                  <div className={`relative z-10 flex h-9 w-9 items-center justify-center rounded-full border-2 text-xs font-bold ${tr}`}
-                    style={{ background: theme.cardBg, borderColor: theme.timelineDot, color: theme.timelineDot, boxShadow: theme.dotGlow }}>{i + 1}</div>
-                  <p className={`mt-3 text-xs font-semibold uppercase tracking-widest ${tr}`} style={{ color: theme.accent }}>{m.year}</p>
-                  <h4 className={`mt-2 font-display text-base leading-snug ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{m.title}</h4>
-                  <p className={`mt-2 text-xs leading-relaxed ${tr}`} style={{ color: theme.muted }}>{m.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="lg:hidden space-y-0">
-            {milestones.map((m, i) => (
-              <div key={i} className="flex gap-5">
-                <div className="flex flex-col items-center">
-                  <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold ${tr}`}
-                    style={{ background: theme.cardBg, borderColor: theme.timelineDot, color: theme.timelineDot, boxShadow: theme.dotGlow }}>{i + 1}</div>
-                  {i < milestones.length - 1 && <div className="mt-1 w-px flex-1" style={{ background: theme.timelineLine, minHeight: '2rem' }} />}
-                </div>
-                <div className="pb-8 pt-1">
-                  <p className={`text-xs font-semibold uppercase tracking-widest ${tr}`} style={{ color: theme.accent }}>{m.year}</p>
-                  <h4 className={`mt-1 font-display text-xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>{m.title}</h4>
-                  <p className={`mt-2 text-sm leading-relaxed ${tr}`} style={{ color: theme.muted }}>{m.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* More Than a Bonspiel */}
-      <section className={`container-page py-24 ${tr}`}>
-        <div className="mx-auto max-w-3xl">
-          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>The Full Experience</p>
-          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>It is More Than a Bonspiel</h2>
-          <div className={`mt-8 space-y-5 text-base leading-relaxed ${tr}`} style={{ color: theme.muted }}>
-            <p>Today, the Glow experience goes well beyond curling. Visitors arrive to a clubhouse that has been transformed for the evening — black lights on, music playing, neon decorations throughout.</p>
-            <p>Teams bring their best outfits. Games and activities fill the spaces between ends. The kitchen is open and the bar is stocked. Prizes are awarded for curling and for costumes alike.</p>
-            <p>The curling is still the centre of it all. But what keeps people coming back is the whole evening — the atmosphere, the people, the kind of night that is genuinely hard to describe until you have been there.</p>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-2.5">
-            {experiencePills.map(item => (
-              <span key={item} className={`rounded-full border px-4 py-1.5 text-sm font-medium ${tr}`}
-                style={{ borderColor: theme.cardBorder, background: theme.cardBg, color: theme.text }}>{item}</span>
-            ))}
           </div>
         </div>
       </section>
@@ -449,20 +308,6 @@ export function GlowPage() {
               <img src={img.src} alt={img.caption} className="w-full object-cover transition-transform duration-300 hover:scale-[1.03]" loading="lazy" />
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Video */}
-      <section className={`py-20 ${tr}`} style={{ background: theme.altBg }}>
-        <div className="container-page">
-          <div className="mx-auto mb-10 max-w-xl text-center">
-            <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>Watch</p>
-            <h2 className={`mt-3 font-display text-4xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>See Glow Curling in Action</h2>
-          </div>
-          <div className={`mx-auto flex aspect-video max-w-3xl items-center justify-center rounded-2xl ${tr}`}
-            style={{ background: theme.cardBg, border: `1px solid ${theme.cardBorder}`, boxShadow: theme.cardShadow }}>
-            <p className={`text-sm ${tr}`} style={{ color: theme.muted }}>Video coming soon</p>
-          </div>
         </div>
       </section>
 
@@ -636,27 +481,6 @@ export function GlowPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* More Than Just the Lights */}
-      <section className={`container-page py-24 ${tr}`}>
-        <div className="mx-auto max-w-3xl">
-          <p className={`text-xs font-semibold uppercase tracking-[0.22em] ${tr}`} style={{ color: theme.accent, textShadow: theme.accentGlow }}>What It Really Is</p>
-          <h2 className={`mt-3 font-display text-4xl sm:text-5xl ${tr}`} style={{ color: theme.heading, textShadow: theme.headingGlow }}>More Than Just the Lights</h2>
-          <p className={`mt-8 text-base leading-relaxed ${tr}`} style={{ color: theme.muted }}>Glow Curling is about much more than black lights and glowing rocks.</p>
-          <div className="mt-6 space-y-4">
-            {closingLines.map((line, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${tr}`} style={{ background: theme.accent, boxShadow: theme.accentGlow }} />
-                <p className={`text-base leading-relaxed ${tr}`} style={{ color: theme.text }}>{line}</p>
-              </div>
-            ))}
-          </div>
-          <blockquote className={`mt-12 border-l-4 py-2 pl-6 font-display text-2xl italic ${tr}`}
-            style={{ borderColor: theme.accent, color: theme.heading, textShadow: theme.headingGlow }}>
-            Every season the lights go out. And the Argyle Curling Club shines a little brighter.
-          </blockquote>
         </div>
       </section>
 
