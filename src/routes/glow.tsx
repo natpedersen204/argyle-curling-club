@@ -188,7 +188,7 @@ const closingLines = [
 const faqs = [
   { q: 'What should I wear?',             a: 'Black lights react best to hi-vis safety clothing, bright fluorescent colours, glow-in-the-dark materials, and battery-powered LED accessories. White looks brighter than usual but does not glow the same way fluorescent materials do. The more neon, the better.' },
   { q: 'Do I need curling experience?',    a: 'Not at all. Glow Curling is designed for everyone, from experienced curlers to complete beginners. The atmosphere is welcoming at all skill levels.' },
-  { q: 'Is equipment provided?',           a: 'Yes. We can provide sliders and brooms. Clean running shoes are all you need on your feet.' },
+  { q: 'Is equipment provided?',           a: 'Curlers should bring their own brooms and sliders. Clean shoes must be worn on all ice surfaces.' },
   { q: 'Can I wear a costume?',            a: 'Absolutely. Creative costumes have become one of the highlights of Glow Curling. Many teams coordinate their outfits and costume prizes are often awarded throughout the evening.' },
   { q: 'Is Glow Curling family friendly?', a: 'Yes. Glow Curling has hosted league events, birthday parties, community groups, and full bonspiels. All ages are welcome.' },
   { q: 'How many people are on a team?',   a: 'Standard curling teams have four players. Contact us if your group has different numbers and we will do our best to accommodate.' },
