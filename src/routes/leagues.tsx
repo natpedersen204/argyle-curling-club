@@ -38,33 +38,33 @@ const leagueTable = [
 const leagueCards = [
   {
     name: 'Seniors League',
-    description: 'A welcoming Tuesday morning league with a long history in the club and a strong emphasis on community.',
+    description: 'A Tuesday morning tradition where good curling, coffee, and conversation go hand in hand.',
     skill: 'All skill levels',
-    welcome: 'Newcomers are always welcome to join the fun.',
+    welcome: 'Daytime curlers, retirees, returning players, and anyone looking for a relaxed social league.',
   },
   {
     name: "Men's League",
-    description: 'A Wednesday night league for members who enjoy a more structured weekly game.',
+    description: 'A Wednesday evening league where competition, sportsmanship, and tradition come together on the ice.',
     skill: 'All skill levels',
-    welcome: 'Friendly competition and a strong social atmosphere.',
+    welcome: 'Curlers who enjoy competitive games and the club atmosphere.',
   },
   {
-    name: 'Open Drop In',
-    description: 'A flexible Thursday morning option for curlers who want a relaxed, open session during the week.',
+    name: 'Open Drop-In',
+    description: 'A casual Thursday morning option for anyone looking to get on the ice without committing to a full season.',
     skill: 'Open to all',
-    welcome: 'A great way to try the game or get on the ice without committing to a full team schedule.',
+    welcome: 'New curlers, flexible schedules, extra practice, or anyone who wants to try curling in a relaxed setting.',
   },
   {
     name: 'Ladies League',
-    description: 'A Thursday night league with a strong social side and a welcoming atmosphere.',
+    description: "A Thursday evening league that combines friendly competition with one of the club's most social nights.",
     skill: 'All skill levels',
-    welcome: 'A good fit for experienced curlers and first-time participants alike.',
+    welcome: 'Experienced curlers, new players, and anyone looking for a welcoming weekly league.',
   },
   {
     name: 'Youth League',
-    description: 'A fun, supportive option for younger curlers and their families, held every second Sunday.',
+    description: 'Held every second Sunday, our youth program helps young curlers build skills, confidence, and a love for the game.',
     skill: 'Beginner to developing',
-    welcome: 'The youth league is designed to be encouraging and easy to join.',
+    welcome: 'Kids and families looking for a fun, encouraging introduction to curling.',
   },
 ]
 
@@ -111,7 +111,7 @@ export function LeaguesPage() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{league.description}</p>
               <div className="mt-4 space-y-2 text-sm text-charcoal">
                 <p><span className="font-semibold text-burgundy">Skill level:</span> {league.skill}</p>
-                <p><span className="font-semibold text-burgundy">Welcoming message:</span> {league.welcome}</p>
+                <p><span className="font-semibold text-burgundy">Best for:</span> {league.welcome}</p>
               </div>
               <Link to="/contact" className="mt-5 inline-flex items-center text-sm font-semibold text-burgundy hover:text-burgundy-dark">
                 Contact about this league <ArrowRight className="ml-1 h-3.5 w-3.5" />
