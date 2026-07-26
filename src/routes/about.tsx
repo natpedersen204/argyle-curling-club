@@ -36,6 +36,7 @@ const boardMembers = [
   { position: 'Mixed Glow Bonspiel Rep', name: 'Riley Buchanan' },
   { position: 'Colin Crockatt Classic Rep', name: 'Travis Lawrence & Kyle Grandmont' },
   { position: 'Seniors League Rep', name: 'Bruce Buchanan' },
+  { position: 'Social Media Manager', name: 'Jessica Holod' },
 ]
 
 const facilityHighlights = [
