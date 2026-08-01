@@ -85,7 +85,7 @@ export function AboutPage() {
             <p className="text-sm leading-relaxed text-muted-foreground">
               We are located in Argyle, Manitoba, in the RM of Rockwood, about a 20-minute drive northwest of the Perimeter Highway.
             </p>
-            <a href="https://www.google.com/maps/search/Argyle+Manitoba" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center text-sm font-semibold text-burgundy hover:text-burgundy-dark">
+            <a href="https://www.google.com/maps/search/Argyle+Manitoba" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center text-sm font-semibold text-burgundy hover:text-burgundy-dark">
               Open Google Maps <ArrowRight className="ml-1 h-3.5 w-3.5" />
             </a>
           </div>

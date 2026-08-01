@@ -91,7 +91,7 @@ export function Footer() {
             <a
               href="https://www.farmdogcreative.ca"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="transition-colors hover:text-gold"
             >
               Farm Dog Creative
