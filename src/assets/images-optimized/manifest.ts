@@ -98,105 +98,119 @@ import img96 from './glow-g7-640.webp'
 import img97 from './glow-g7-900.avif'
 import img98 from './glow-g7-900.webp'
 import img99 from './glow-g7-900.jpg'
-import img100 from './glow-g8-400.avif'
-import img101 from './glow-g8-400.webp'
-import img102 from './glow-g8-640.avif'
-import img103 from './glow-g8-640.webp'
-import img104 from './glow-g8-900.avif'
-import img105 from './glow-g8-900.webp'
-import img106 from './glow-g8-900.jpg'
-import img107 from './news-2021-400.avif'
-import img108 from './news-2021-400.webp'
-import img109 from './news-2021-589.avif'
-import img110 from './news-2021-589.webp'
-import img111 from './news-2021-589.jpg'
-import img112 from './news-2023-400.avif'
-import img113 from './news-2023-400.webp'
-import img114 from './news-2023-562.avif'
-import img115 from './news-2023-562.webp'
-import img116 from './news-2023-562.jpg'
-import img117 from './news-2024-400.avif'
-import img118 from './news-2024-400.webp'
-import img119 from './news-2024-595.avif'
-import img120 from './news-2024-595.webp'
-import img121 from './news-2024-595.jpg'
-import img122 from './news-2025-400.avif'
-import img123 from './news-2025-400.webp'
-import img124 from './news-2025-585.avif'
-import img125 from './news-2025-585.webp'
-import img126 from './news-2025-585.jpg'
-import img127 from './news-glowthrow-400.avif'
-import img128 from './news-glowthrow-400.webp'
-import img129 from './news-glowthrow-640.avif'
-import img130 from './news-glowthrow-640.webp'
-import img131 from './news-glowthrow-900.avif'
-import img132 from './news-glowthrow-900.webp'
-import img133 from './news-glowthrow-900.jpg'
-import img134 from './news-ladies2026-400.avif'
-import img135 from './news-ladies2026-400.webp'
-import img136 from './news-ladies2026-640.avif'
-import img137 from './news-ladies2026-640.webp'
-import img138 from './news-ladies2026-859.avif'
-import img139 from './news-ladies2026-859.webp'
-import img140 from './news-ladies2026-859.jpg'
-import img141 from './news-mixed2026-400.avif'
-import img142 from './news-mixed2026-400.webp'
-import img143 from './news-mixed2026-640.avif'
-import img144 from './news-mixed2026-640.webp'
-import img145 from './news-mixed2026-900.avif'
-import img146 from './news-mixed2026-900.webp'
-import img147 from './news-mixed2026-900.jpg'
-import img148 from './home-hero-640.avif'
-import img149 from './home-hero-640.webp'
-import img150 from './home-hero-1024.avif'
-import img151 from './home-hero-1024.webp'
-import img152 from './home-hero-1600.avif'
-import img153 from './home-hero-1600.webp'
-import img154 from './home-hero-2048.avif'
-import img155 from './home-hero-2048.webp'
-import img156 from './home-hero-2048.jpg'
-import img157 from './home-league-400.avif'
-import img158 from './home-league-400.webp'
-import img159 from './home-league-640.avif'
-import img160 from './home-league-640.webp'
-import img161 from './home-league-900.avif'
-import img162 from './home-league-900.webp'
-import img163 from './home-league-900.jpg'
-import img164 from './home-bonspiel-400.avif'
-import img165 from './home-bonspiel-400.webp'
-import img166 from './home-bonspiel-640.avif'
-import img167 from './home-bonspiel-640.webp'
-import img168 from './home-bonspiel-900.avif'
-import img169 from './home-bonspiel-900.webp'
-import img170 from './home-bonspiel-900.jpg'
-import img171 from './home-mens-400.avif'
-import img172 from './home-mens-400.webp'
-import img173 from './home-mens-640.avif'
-import img174 from './home-mens-640.webp'
-import img175 from './home-mens-900.avif'
-import img176 from './home-mens-900.webp'
-import img177 from './home-mens-900.jpg'
-import img178 from './home-rentals-400.avif'
-import img179 from './home-rentals-400.webp'
-import img180 from './home-rentals-640.avif'
-import img181 from './home-rentals-640.webp'
-import img182 from './home-rentals-900.avif'
-import img183 from './home-rentals-900.webp'
-import img184 from './home-rentals-900.jpg'
-import img185 from './bonspiels-seniors-400.avif'
-import img186 from './bonspiels-seniors-400.webp'
-import img187 from './bonspiels-seniors-640.avif'
-import img188 from './bonspiels-seniors-640.webp'
-import img189 from './bonspiels-seniors-900.avif'
-import img190 from './bonspiels-seniors-900.webp'
-import img191 from './bonspiels-seniors-900.jpg'
-import img192 from './bonspiels-crockatt-400.avif'
-import img193 from './bonspiels-crockatt-400.webp'
-import img194 from './bonspiels-crockatt-640.avif'
-import img195 from './bonspiels-crockatt-640.webp'
-import img196 from './bonspiels-crockatt-900.avif'
-import img197 from './bonspiels-crockatt-900.webp'
-import img198 from './bonspiels-crockatt-900.jpg'
+import img100 from './glow-g9-400.avif'
+import img101 from './glow-g9-400.webp'
+import img102 from './glow-g9-640.avif'
+import img103 from './glow-g9-640.webp'
+import img104 from './glow-g9-900.avif'
+import img105 from './glow-g9-900.webp'
+import img106 from './glow-g9-900.jpg'
+import img107 from './glow-g10-400.avif'
+import img108 from './glow-g10-400.webp'
+import img109 from './glow-g10-640.avif'
+import img110 from './glow-g10-640.webp'
+import img111 from './glow-g10-900.avif'
+import img112 from './glow-g10-900.webp'
+import img113 from './glow-g10-900.jpg'
+import img114 from './glow-g11-400.avif'
+import img115 from './glow-g11-400.webp'
+import img116 from './glow-g11-640.avif'
+import img117 from './glow-g11-640.webp'
+import img118 from './glow-g11-900.avif'
+import img119 from './glow-g11-900.webp'
+import img120 from './glow-g11-900.jpg'
+import img121 from './news-2021-400.avif'
+import img122 from './news-2021-400.webp'
+import img123 from './news-2021-589.avif'
+import img124 from './news-2021-589.webp'
+import img125 from './news-2021-589.jpg'
+import img126 from './news-2023-400.avif'
+import img127 from './news-2023-400.webp'
+import img128 from './news-2023-562.avif'
+import img129 from './news-2023-562.webp'
+import img130 from './news-2023-562.jpg'
+import img131 from './news-2024-400.avif'
+import img132 from './news-2024-400.webp'
+import img133 from './news-2024-595.avif'
+import img134 from './news-2024-595.webp'
+import img135 from './news-2024-595.jpg'
+import img136 from './news-2025-400.avif'
+import img137 from './news-2025-400.webp'
+import img138 from './news-2025-585.avif'
+import img139 from './news-2025-585.webp'
+import img140 from './news-2025-585.jpg'
+import img141 from './news-glowthrow-400.avif'
+import img142 from './news-glowthrow-400.webp'
+import img143 from './news-glowthrow-640.avif'
+import img144 from './news-glowthrow-640.webp'
+import img145 from './news-glowthrow-900.avif'
+import img146 from './news-glowthrow-900.webp'
+import img147 from './news-glowthrow-900.jpg'
+import img148 from './news-ladies2026-400.avif'
+import img149 from './news-ladies2026-400.webp'
+import img150 from './news-ladies2026-640.avif'
+import img151 from './news-ladies2026-640.webp'
+import img152 from './news-ladies2026-859.avif'
+import img153 from './news-ladies2026-859.webp'
+import img154 from './news-ladies2026-859.jpg'
+import img155 from './news-mixed2026-400.avif'
+import img156 from './news-mixed2026-400.webp'
+import img157 from './news-mixed2026-640.avif'
+import img158 from './news-mixed2026-640.webp'
+import img159 from './news-mixed2026-900.avif'
+import img160 from './news-mixed2026-900.webp'
+import img161 from './news-mixed2026-900.jpg'
+import img162 from './home-hero-640.avif'
+import img163 from './home-hero-640.webp'
+import img164 from './home-hero-1024.avif'
+import img165 from './home-hero-1024.webp'
+import img166 from './home-hero-1600.avif'
+import img167 from './home-hero-1600.webp'
+import img168 from './home-hero-2048.avif'
+import img169 from './home-hero-2048.webp'
+import img170 from './home-hero-2048.jpg'
+import img171 from './home-league-400.avif'
+import img172 from './home-league-400.webp'
+import img173 from './home-league-640.avif'
+import img174 from './home-league-640.webp'
+import img175 from './home-league-900.avif'
+import img176 from './home-league-900.webp'
+import img177 from './home-league-900.jpg'
+import img178 from './home-bonspiel-400.avif'
+import img179 from './home-bonspiel-400.webp'
+import img180 from './home-bonspiel-640.avif'
+import img181 from './home-bonspiel-640.webp'
+import img182 from './home-bonspiel-900.avif'
+import img183 from './home-bonspiel-900.webp'
+import img184 from './home-bonspiel-900.jpg'
+import img185 from './home-mens-400.avif'
+import img186 from './home-mens-400.webp'
+import img187 from './home-mens-640.avif'
+import img188 from './home-mens-640.webp'
+import img189 from './home-mens-900.avif'
+import img190 from './home-mens-900.webp'
+import img191 from './home-mens-900.jpg'
+import img192 from './home-rentals-400.avif'
+import img193 from './home-rentals-400.webp'
+import img194 from './home-rentals-640.avif'
+import img195 from './home-rentals-640.webp'
+import img196 from './home-rentals-900.avif'
+import img197 from './home-rentals-900.webp'
+import img198 from './home-rentals-900.jpg'
+import img199 from './bonspiels-seniors-400.avif'
+import img200 from './bonspiels-seniors-400.webp'
+import img201 from './bonspiels-seniors-640.avif'
+import img202 from './bonspiels-seniors-640.webp'
+import img203 from './bonspiels-seniors-900.avif'
+import img204 from './bonspiels-seniors-900.webp'
+import img205 from './bonspiels-seniors-900.jpg'
+import img206 from './bonspiels-crockatt-400.avif'
+import img207 from './bonspiels-crockatt-400.webp'
+import img208 from './bonspiels-crockatt-640.avif'
+import img209 from './bonspiels-crockatt-640.webp'
+import img210 from './bonspiels-crockatt-900.avif'
+import img211 from './bonspiels-crockatt-900.webp'
+import img212 from './bonspiels-crockatt-900.jpg'
 
 export const logo = {
   width: 1500,
@@ -310,95 +324,95 @@ export const glowG7 = {
   src: img99,
 }
 
-export const glowG8 = {
-  width: 4032,
-  height: 3024,
+export const glowG9 = {
+  width: 1024,
+  height: 768,
   avifSrcSet: `${img100} 400w, ${img102} 640w, ${img104} 900w`,
   webpSrcSet: `${img101} 400w, ${img103} 640w, ${img105} 900w`,
   src: img106,
 }
 
+export const glowG10 = {
+  width: 1772,
+  height: 1772,
+  avifSrcSet: `${img107} 400w, ${img109} 640w, ${img111} 900w`,
+  webpSrcSet: `${img108} 400w, ${img110} 640w, ${img112} 900w`,
+  src: img113,
+}
+
+export const glowG11 = {
+  width: 4032,
+  height: 3024,
+  avifSrcSet: `${img114} 400w, ${img116} 640w, ${img118} 900w`,
+  webpSrcSet: `${img115} 400w, ${img117} 640w, ${img119} 900w`,
+  src: img120,
+}
+
 export const news2021 = {
   width: 589,
   height: 303,
-  avifSrcSet: `${img107} 400w, ${img109} 589w`,
-  webpSrcSet: `${img108} 400w, ${img110} 589w`,
-  src: img111,
+  avifSrcSet: `${img121} 400w, ${img123} 589w`,
+  webpSrcSet: `${img122} 400w, ${img124} 589w`,
+  src: img125,
 }
 
 export const news2023 = {
   width: 562,
   height: 502,
-  avifSrcSet: `${img112} 400w, ${img114} 562w`,
-  webpSrcSet: `${img113} 400w, ${img115} 562w`,
-  src: img116,
+  avifSrcSet: `${img126} 400w, ${img128} 562w`,
+  webpSrcSet: `${img127} 400w, ${img129} 562w`,
+  src: img130,
 }
 
 export const news2024 = {
   width: 595,
   height: 484,
-  avifSrcSet: `${img117} 400w, ${img119} 595w`,
-  webpSrcSet: `${img118} 400w, ${img120} 595w`,
-  src: img121,
+  avifSrcSet: `${img131} 400w, ${img133} 595w`,
+  webpSrcSet: `${img132} 400w, ${img134} 595w`,
+  src: img135,
 }
 
 export const news2025 = {
   width: 585,
   height: 364,
-  avifSrcSet: `${img122} 400w, ${img124} 585w`,
-  webpSrcSet: `${img123} 400w, ${img125} 585w`,
-  src: img126,
+  avifSrcSet: `${img136} 400w, ${img138} 585w`,
+  webpSrcSet: `${img137} 400w, ${img139} 585w`,
+  src: img140,
 }
 
 export const newsGlowthrow = {
   width: 1156,
   height: 651,
-  avifSrcSet: `${img127} 400w, ${img129} 640w, ${img131} 900w`,
-  webpSrcSet: `${img128} 400w, ${img130} 640w, ${img132} 900w`,
-  src: img133,
-}
-
-export const newsLadies2026 = {
-  width: 859,
-  height: 573,
-  avifSrcSet: `${img134} 400w, ${img136} 640w, ${img138} 859w`,
-  webpSrcSet: `${img135} 400w, ${img137} 640w, ${img139} 859w`,
-  src: img140,
-}
-
-export const newsMixed2026 = {
-  width: 1483,
-  height: 634,
   avifSrcSet: `${img141} 400w, ${img143} 640w, ${img145} 900w`,
   webpSrcSet: `${img142} 400w, ${img144} 640w, ${img146} 900w`,
   src: img147,
 }
 
+export const newsLadies2026 = {
+  width: 859,
+  height: 573,
+  avifSrcSet: `${img148} 400w, ${img150} 640w, ${img152} 859w`,
+  webpSrcSet: `${img149} 400w, ${img151} 640w, ${img153} 859w`,
+  src: img154,
+}
+
+export const newsMixed2026 = {
+  width: 1483,
+  height: 634,
+  avifSrcSet: `${img155} 400w, ${img157} 640w, ${img159} 900w`,
+  webpSrcSet: `${img156} 400w, ${img158} 640w, ${img160} 900w`,
+  src: img161,
+}
+
 export const homeHero = {
   width: 2048,
   height: 1536,
-  avifSrcSet: `${img148} 640w, ${img150} 1024w, ${img152} 1600w, ${img154} 2048w`,
-  webpSrcSet: `${img149} 640w, ${img151} 1024w, ${img153} 1600w, ${img155} 2048w`,
-  src: img156,
-}
-
-export const homeLeague = {
-  width: 2048,
-  height: 1536,
-  avifSrcSet: `${img157} 400w, ${img159} 640w, ${img161} 900w`,
-  webpSrcSet: `${img158} 400w, ${img160} 640w, ${img162} 900w`,
-  src: img163,
-}
-
-export const homeBonspiel = {
-  width: 2048,
-  height: 1536,
-  avifSrcSet: `${img164} 400w, ${img166} 640w, ${img168} 900w`,
-  webpSrcSet: `${img165} 400w, ${img167} 640w, ${img169} 900w`,
+  avifSrcSet: `${img162} 640w, ${img164} 1024w, ${img166} 1600w, ${img168} 2048w`,
+  webpSrcSet: `${img163} 640w, ${img165} 1024w, ${img167} 1600w, ${img169} 2048w`,
   src: img170,
 }
 
-export const homeMens = {
+export const homeLeague = {
   width: 2048,
   height: 1536,
   avifSrcSet: `${img171} 400w, ${img173} 640w, ${img175} 900w`,
@@ -406,15 +420,15 @@ export const homeMens = {
   src: img177,
 }
 
-export const homeRentals = {
-  width: 4032,
-  height: 3024,
+export const homeBonspiel = {
+  width: 2048,
+  height: 1536,
   avifSrcSet: `${img178} 400w, ${img180} 640w, ${img182} 900w`,
   webpSrcSet: `${img179} 400w, ${img181} 640w, ${img183} 900w`,
   src: img184,
 }
 
-export const bonspielsSeniors = {
+export const homeMens = {
   width: 2048,
   height: 1536,
   avifSrcSet: `${img185} 400w, ${img187} 640w, ${img189} 900w`,
@@ -422,10 +436,26 @@ export const bonspielsSeniors = {
   src: img191,
 }
 
-export const bonspielsCrockatt = {
+export const homeRentals = {
   width: 4032,
   height: 3024,
   avifSrcSet: `${img192} 400w, ${img194} 640w, ${img196} 900w`,
   webpSrcSet: `${img193} 400w, ${img195} 640w, ${img197} 900w`,
   src: img198,
+}
+
+export const bonspielsSeniors = {
+  width: 2048,
+  height: 1536,
+  avifSrcSet: `${img199} 400w, ${img201} 640w, ${img203} 900w`,
+  webpSrcSet: `${img200} 400w, ${img202} 640w, ${img204} 900w`,
+  src: img205,
+}
+
+export const bonspielsCrockatt = {
+  width: 4032,
+  height: 3024,
+  avifSrcSet: `${img206} 400w, ${img208} 640w, ${img210} 900w`,
+  webpSrcSet: `${img207} 400w, ${img209} 640w, ${img211} 900w`,
+  src: img212,
 }

@@ -15,7 +15,9 @@ import {
   glowG5 as g5,
   glowG6 as g6,
   glowG7 as g7,
-  glowG8 as g8,
+  glowG9 as g9,
+  glowG10 as g10,
+  glowG11 as g11,
   news2021,
   news2023,
   news2024,
@@ -34,7 +36,9 @@ const galleryImages = [
   { src: g5,  caption: 'Competing under the lights' },
   { src: g6,  caption: 'Curlers on the glowing ice' },
   { src: g7,  caption: 'Glow Night at the Argyle Curling Club' },
-  { src: g8,  caption: 'A night to remember' },
+  { src: g9,  caption: 'Skeleton crew glowing on the ice' },
+  { src: g10, caption: 'Fiesta-themed costumes under black lights' },
+  { src: g11, caption: 'All smiles after a night of Glow Curling' },
 ]
 
 interface NewsArticle {

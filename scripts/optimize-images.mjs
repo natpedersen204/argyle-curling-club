@@ -33,7 +33,9 @@ const entries = [
   { slug: 'glow-g5', src: 'images/IMG_3062.JPEG', tier: 'card' },
   { slug: 'glow-g6', src: 'images/IMG_3063.JPEG', tier: 'card' },
   { slug: 'glow-g7', src: 'images/IMG_2626.jpeg', tier: 'card' },
-  { slug: 'glow-g8', src: 'images/IMG_2624.jpeg', tier: 'card' },
+  { slug: 'glow-g9', src: 'images/IMG_5315.JPG', tier: 'card' },
+  { slug: 'glow-g10', src: 'images/IMG_3537.JPEG', tier: 'card' },
+  { slug: 'glow-g11', src: 'images/IMG_1722.jpeg', tier: 'card' },
 
   { slug: 'news-2021', src: 'images/glow/dec 2021 glow.png', tier: 'card', dropAlpha: true },
   { slug: 'news-2023', src: 'images/glow/2023 glow.png', tier: 'card', dropAlpha: true },
