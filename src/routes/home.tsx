@@ -1,16 +1,17 @@
 import { Link } from '@tanstack/react-router'
 import { Section } from '../components/Section'
+import { ResponsiveImage } from '../components/ResponsiveImage'
 import { ArrowRight, BadgeCheck, PhoneCall, UsersRound } from 'lucide-react'
-import heroPhoto from '../assets/images/IMG_0030.JPEG'
-import leaguePhoto from '../assets/images/IMG_9944.JPEG'
-import bonspielPhoto from '../assets/images/IMG_9977.JPEG'
-import glowPhoto from '../assets/images/IMG_2627.jpeg'
-import mensPhoto from '../assets/images/IMG_0025.JPEG'
-import mixedGlowPhoto from '../assets/images/IMG_3064.JPEG'
-import rentalsPhoto from '../assets/images/IMG_9908.jpeg'
-import contactPhoto from '../assets/images/IMG_9944.JPEG'
+import { homeHero, homeLeague, homeBonspiel, glowG2, homeMens, glowHero, homeRentals } from '../assets/images-optimized/manifest'
 
-const heroImage = heroPhoto
+const heroImage = homeHero
+const leaguePhoto = homeLeague
+const bonspielPhoto = homeBonspiel
+const glowPhoto = glowG2
+const mensPhoto = homeMens
+const mixedGlowPhoto = glowHero
+const rentalsPhoto = homeRentals
+const contactPhoto = homeLeague
 
 const quickLinks = [
   {
@@ -57,10 +58,13 @@ export function HomePage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-[#2d1718] text-white">
-        <img
-          src={heroImage}
+        <ResponsiveImage
+          image={heroImage}
           alt="Curling ice and community members in a bright club setting"
           className="absolute inset-0 h-full w-full object-cover"
+          sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
           onError={(event) => {
             event.currentTarget.style.display = 'none'
           }}
@@ -99,10 +103,11 @@ export function HomePage() {
           <Section eyebrow="Start here" title="How do I join a league?" description="We offer a range of leagues for seniors, men, ladies, mixed, and youth curlers. The best first step is to visit the league page and get in touch with the club.">
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
               <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
-                <img
-                  src={leaguePhoto}
+                <ResponsiveImage
+                  image={leaguePhoto}
                   alt="Members gathered around the curling club"
                   className="h-64 w-full object-cover"
+                  sizes="(min-width: 1024px) 480px, 100vw"
                 />
               </div>
               <div className="grid gap-4">
@@ -133,7 +138,7 @@ export function HomePage() {
         <div className="grid gap-4 sm:grid-cols-2">
             {upcomingBonspiels.map((spiel) => (
               <div key={spiel.name} className="rounded-[1.25rem] border border-[#e7dac4] bg-white/80 p-6 shadow-sm">
-                <img src={spiel.image} alt={spiel.name} className="h-32 w-full rounded-[1rem] object-cover" />
+                <ResponsiveImage image={spiel.image} alt={spiel.name} className="h-32 w-full rounded-[1rem] object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
                 <h3 className="mt-4 font-display text-xl text-[#7A1F2B]">{spiel.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{spiel.details}</p>
                 <Link to={spiel.link} className="mt-4 inline-flex items-center text-sm font-semibold text-[#7A1F2B] hover:text-[#5A1620]">
@@ -147,10 +152,11 @@ export function HomePage() {
       <Section eyebrow="Gatherings & events" title="Can I rent the club?" description="Our clubhouse and event spaces are available for meetings, socials, birthdays, and community celebrations." className="rounded-[2rem] border border-[#e7dac4] bg-[#f8f3e8] px-4 py-14 shadow-[0_16px_45px_rgba(26,26,26,0.05)] sm:px-8 lg:px-10 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
-            <img
-              src={rentalsPhoto}
+            <ResponsiveImage
+              image={rentalsPhoto}
               alt="Warm interior gathering space"
               className="h-72 w-full object-cover"
+              sizes="(min-width: 1024px) 560px, 100vw"
             />
           </div>
           <div className="rounded-[1.5rem] border border-[#e7dac4] bg-white/80 p-7 shadow-sm">
@@ -174,10 +180,11 @@ export function HomePage() {
       <Section eyebrow="Get in touch" title="Contact Information" className="rounded-[2rem] border border-[#e7dac4] bg-[#f7efe0] px-4 py-14 shadow-[0_16px_45px_rgba(26,26,26,0.05)] sm:px-8 lg:px-10 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
           <div className="overflow-hidden rounded-[1.5rem] border border-[#e7dac4] bg-[#efe2ca] shadow-sm">
-            <img
-              src={contactPhoto}
+            <ResponsiveImage
+              image={contactPhoto}
               alt="Friendly club contact setting"
               className="h-72 w-full object-cover"
+              sizes="(min-width: 1024px) 560px, 100vw"
             />
           </div>
           <div className="rounded-[1.5rem] border border-[#e7dac4] bg-white/80 p-7 shadow-sm">

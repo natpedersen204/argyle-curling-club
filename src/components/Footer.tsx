@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, Phone } from "lucide-react";
-import footerLogo from "../assets/logos/argyle-logo1.png";
+import { ResponsiveImage } from "./ResponsiveImage";
+import { logo as footerLogo } from "../assets/images-optimized/manifest";
 
 export function Footer() {
   return (
@@ -8,10 +9,11 @@ export function Footer() {
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
-            <img
-              src={footerLogo}
+            <ResponsiveImage
+              image={footerLogo}
               alt="Argyle Curling Club crest"
               className="h-14 w-auto shrink-0 object-contain"
+              sizes="56px"
             />
             <div>
               <p className="font-display text-lg text-white">Argyle Curling Club</p>

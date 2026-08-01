@@ -4,23 +4,26 @@ import {
   X, ChevronLeft, ChevronRight, Moon, Sun,
   Zap, Music, Sparkles, Coffee, Heart, Trophy, ArrowRight,
 } from 'lucide-react'
-import glowHeroImg from '../assets/images/IMG_3064.JPEG'
-import g1 from '../assets/images/IMG_3074.JPEG'
-import g1b from '../assets/images/IMG_3065.JPEG'
-import g2 from '../assets/images/IMG_2627.jpeg'
-import g3 from '../assets/images/74874A57-CCCA-49CF-B15A-D2FEAEEA1C36.JPG'
-import g4 from '../assets/images/IMG_1364.jpeg'
-import g5 from '../assets/images/IMG_3062.JPEG'
-import g6 from '../assets/images/IMG_3063.JPEG'
-import g7 from '../assets/images/IMG_2626.jpeg'
-import g8 from '../assets/images/IMG_2624.jpeg'
-import news2021 from '../assets/images/glow/dec 2021 glow.png'
-import news2023 from '../assets/images/glow/2023 glow.png'
-import news2024 from '../assets/images/glow/2nd ladies.png'
-import news2025 from '../assets/images/glow/3rd ladies.png'
-import newsGlowThrow from '../assets/images/glow/feb202025 tribune.png'
-import newsLadies2026 from '../assets/images/glow/ladies 2026.png'
-import newsMixed2026 from '../assets/images/glow/mixed2026.png'
+import { ResponsiveImage, type ResponsiveImageData } from '../components/ResponsiveImage'
+import {
+  glowHero as glowHeroImg,
+  glowG1 as g1,
+  glowG1b as g1b,
+  glowG2 as g2,
+  glowG3 as g3,
+  glowG4 as g4,
+  glowG5 as g5,
+  glowG6 as g6,
+  glowG7 as g7,
+  glowG8 as g8,
+  news2021,
+  news2023,
+  news2024,
+  news2025,
+  newsGlowthrow as newsGlowThrow,
+  newsLadies2026,
+  newsMixed2026,
+} from '../assets/images-optimized/manifest'
 
 const galleryImages = [
   { src: g1,  caption: 'The Rock Bottoms — costumes are part of the tradition' },
@@ -41,7 +44,7 @@ interface NewsArticle {
   publication: string
   date: string
   summary: string
-  src: string
+  src: ResponsiveImageData
   alt: string
 }
 
@@ -234,8 +237,9 @@ export function GlowPage() {
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden" style={{ minHeight: '82vh' }}>
-        <img src={glowHeroImg} alt="Glow Curling at Argyle Curling Club"
+        <ResponsiveImage image={glowHeroImg} alt="Glow Curling at Argyle Curling Club"
           className={`absolute inset-0 h-full w-full object-cover ${tr}`}
+          sizes="100vw" loading="eager" fetchPriority="high"
           style={{ filter: glow ? 'brightness(0.4) saturate(1.9)' : 'brightness(0.52)' }} />
         <div className={`absolute inset-0 ${tr}`} style={{ background: glow
           ? 'linear-gradient(135deg,rgba(55,0,75,0.94) 0%,rgba(8,0,22,0.6) 65%,transparent 100%)'
@@ -305,7 +309,7 @@ export function GlowPage() {
               onClick={() => setLightboxIdx(i)} role="button" tabIndex={0}
               aria-label={`View photo: ${img.caption}`}
               onKeyDown={e => e.key === 'Enter' && setLightboxIdx(i)}>
-              <img src={img.src} alt={img.caption} className="w-full object-cover transition-transform duration-300 hover:scale-[1.03]" loading="lazy" />
+              <ResponsiveImage image={img.src} alt={img.caption} className="w-full object-cover transition-transform duration-300 hover:scale-[1.03]" loading="lazy" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
             </div>
           ))}
         </div>
@@ -342,7 +346,7 @@ export function GlowPage() {
                           className="group max-w-sm w-full overflow-hidden rounded-xl text-left transition-all duration-300 hover:-translate-y-1"
                           style={{ background: '#fffdf7', boxShadow: theme.newsGlow, border: glow ? '1px solid rgba(255,0,170,0.25)' : '1px solid #e8e0d0' }}
                           aria-label={`View article: ${article.headline}`}>
-                          <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
+                          <ResponsiveImage image={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" sizes="384px" />
                           <div className="px-4 py-3">
                             <p className="text-xs font-semibold text-[#7A1F2B]">{article.articleTitle}</p>
                             <p className="text-xs text-[#3D3D3D]/50">{article.publication} · {article.date}</p>
@@ -374,7 +378,7 @@ export function GlowPage() {
                           className="group max-w-sm w-full overflow-hidden rounded-xl text-left transition-all duration-300 hover:-translate-y-1"
                           style={{ background: '#fffdf7', boxShadow: theme.newsGlow, border: glow ? '1px solid rgba(255,0,170,0.25)' : '1px solid #e8e0d0' }}
                           aria-label={`View article: ${article.headline}`}>
-                          <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
+                          <ResponsiveImage image={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" sizes="384px" />
                           <div className="px-4 py-3">
                             <p className="text-xs font-semibold text-[#7A1F2B]">{article.articleTitle}</p>
                             <p className="text-xs text-[#3D3D3D]/50">{article.publication} · {article.date}</p>
@@ -450,7 +454,7 @@ export function GlowPage() {
                       className="mt-4 w-full overflow-hidden rounded-xl text-left transition-all duration-200 hover:opacity-90 active:scale-[0.99]"
                       style={{ background: '#fffdf7', boxShadow: theme.newsGlow, border: glow ? '1px solid rgba(255,0,170,0.25)' : '1px solid #e8e0d0' }}
                       aria-label={`View article: ${article.headline}`}>
-                      <img src={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" />
+                      <ResponsiveImage image={article.src} alt={article.alt} className="w-full object-cover" loading="lazy" sizes="384px" />
                     </button>
                   </div>
                 </div>
@@ -546,8 +550,9 @@ export function GlowPage() {
             onClick={e => { e.stopPropagation(); setLightboxIdx(i => i !== null ? Math.max(i - 1, 0) : null) }}
             disabled={lightboxIdx === 0} aria-label="Previous photo"><ChevronLeft className="h-5 w-5" /></button>
           <div className="max-w-4xl px-16" onClick={e => e.stopPropagation()}>
-            <img src={galleryImages[lightboxIdx].src} alt={galleryImages[lightboxIdx].caption}
+            <ResponsiveImage image={galleryImages[lightboxIdx].src} alt={galleryImages[lightboxIdx].caption}
               className="max-h-[80vh] rounded-xl object-contain"
+              sizes="(min-width: 1024px) 896px, 100vw"
               style={{ boxShadow: glow ? '0 0 40px rgba(255,0,170,0.25),0 8px 32px rgba(0,0,0,0.6)' : '0 8px 32px rgba(0,0,0,0.5)' }} />
             <p className="mt-3 text-center text-sm text-white/60">{galleryImages[lightboxIdx].caption}</p>
             <p className="mt-1 text-center text-xs text-white/30">{lightboxIdx + 1} / {galleryImages.length}</p>
@@ -577,8 +582,8 @@ export function GlowPage() {
             disabled={newsLightboxIdx === 0} aria-label="Previous article"><ChevronLeft className="h-5 w-5" /></button>
           <div className="max-w-3xl w-full px-16" onClick={e => e.stopPropagation()}>
             <div className="overflow-hidden rounded-xl" style={{ background: '#fffdf7', boxShadow: glow ? '0 0 0 1px rgba(255,0,170,0.4),0 0 40px rgba(255,0,170,0.15),0 16px 48px rgba(0,0,0,0.6)' : '0 16px 48px rgba(0,0,0,0.5)' }}>
-              <img src={newsArticles[newsLightboxIdx].src} alt={newsArticles[newsLightboxIdx].alt}
-                className="w-full object-contain" />
+              <ResponsiveImage image={newsArticles[newsLightboxIdx].src} alt={newsArticles[newsLightboxIdx].alt}
+                className="w-full object-contain" sizes="(min-width: 1024px) 768px, 100vw" />
             </div>
             <div className="mt-4 text-center">
               <p className="text-sm font-semibold text-white/80">{newsArticles[newsLightboxIdx].articleTitle}</p>

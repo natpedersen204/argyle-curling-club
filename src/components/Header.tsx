@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import argyleLogo from "../assets/logos/argyle-logo1.png";
+import { ResponsiveImage } from "./ResponsiveImage";
+import { logo as argyleLogo } from "../assets/images-optimized/manifest";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -24,10 +25,12 @@ export function Header() {
           onClick={() => setOpen(false)}
           className="flex min-w-0 items-center gap-2 sm:gap-3"
         >
-          <img
-            src={argyleLogo}
+          <ResponsiveImage
+            image={argyleLogo}
             alt="Argyle Curling Club logo"
             className="h-16 w-auto shrink-0 object-contain sm:h-18 lg:h-20"
+            sizes="80px"
+            loading="eager"
           />
         </Link>
 

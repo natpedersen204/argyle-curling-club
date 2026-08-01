@@ -1,10 +1,8 @@
 import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
+import { ResponsiveImage } from '../components/ResponsiveImage'
 import { ArrowRight, Heart, Snowflake, Users } from 'lucide-react'
-import mapPhoto from '../assets/images/image0000021.jpg'
-import historyPhoto from '../assets/images/IMG_7132.JPEG'
-import facilityPhoto from '../assets/images/IMG_4243.jpeg'
-import clubRoomPhoto from '../assets/images/IMG_9456.JPEG'
+import { aboutLocation as mapPhoto, aboutHistory as historyPhoto, aboutFacility as facilityPhoto, aboutClubroom as clubRoomPhoto } from '../assets/images-optimized/manifest'
 
 const values = [
   {
@@ -187,7 +185,7 @@ export function AboutPage() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {galleryPhotos.map((photo, index) => (
             <div key={index} className="overflow-hidden rounded-xl border border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
-              <img src={photo} alt={`Gallery photo ${index + 1}`} className="h-56 w-full object-cover" />
+              <ResponsiveImage image={photo} alt={`Gallery photo ${index + 1}`} className="h-56 w-full object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" />
             </div>
           ))}
         </div>

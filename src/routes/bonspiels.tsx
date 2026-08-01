@@ -1,11 +1,8 @@
 ﻿import { Link } from '@tanstack/react-router'
 import { PageHero, Section } from '../components/Section'
+import { ResponsiveImage } from '../components/ResponsiveImage'
 import { ArrowRight } from 'lucide-react'
-import menPhoto from '../assets/images/IMG_0025.JPEG'
-import seniorsPhoto from '../assets/images/IMG_6270.JPEG'
-import ladiesPhoto from '../assets/images/IMG_2627.jpeg'
-import glowPhoto from '../assets/images/IMG_3064.JPEG'
-import crockattPhoto from '../assets/images/IMG_3636.jpeg'
+import { homeMens as menPhoto, bonspielsSeniors as seniorsPhoto, glowG2 as ladiesPhoto, glowHero as glowPhoto, bonspielsCrockatt as crockattPhoto } from '../assets/images-optimized/manifest'
 
 const bonspiels = [
   {
@@ -108,7 +105,7 @@ export function BonspielsPage() {
                     </Link>
                   )}
                   <div className="mt-6 overflow-hidden rounded-xl border border-dashed border-[#C8A24A] bg-[#F8F5F0] shadow-sm">
-                    <img src={spiel.photo} alt={`${spiel.name} photo`} className={`h-48 w-full object-cover ${spiel.photoPosition}`} />
+                    <ResponsiveImage image={spiel.photo} alt={`${spiel.name} photo`} className={`h-48 w-full object-cover ${spiel.photoPosition}`} sizes="(min-width: 1024px) 420px, 100vw" />
                   </div>
                 </div>
               </div>
