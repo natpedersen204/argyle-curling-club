@@ -86,7 +86,17 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-start justify-between gap-2 py-5 text-xs text-white/60 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Argyle Curling Club. All rights reserved.</p>
-          <p>Built with heart in Manitoba.</p>
+          <p>
+            Website by{" "}
+            <a
+              href="https://www.farmdogcreative.ca"
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-gold"
+            >
+              Farm Dog Creative
+            </a>
+          </p>
         </div>
       </div>
     </footer>
